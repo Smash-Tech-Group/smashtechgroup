@@ -1,0 +1,2642 @@
+/* == 1. SMALLEST SCREENS, 2. SMALL TABLET SCREENS, AND SMALL SCREENS LIKE IPAD PRO */
+/* @media screen and (max-width: 1024px){ */
+
+/* 1. PHONE PORTRAIT */
+@media screen and (max-width: 1024px){
+    *{
+        margin: 0;
+        padding:0;
+        box-sizing: border-box;
+    }   
+    html{
+        font-size: 92%; /* change for different device sizes */
+    }
+    body{
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Reusable Grid Columns */
+    .c1-xs, .c2-xs, .c3-xs, .c4-xs{
+        display: grid;
+    }    
+    .c1-xs{ grid-template-columns: repeat(1, 1fr); }
+    .c2-xs{ grid-template-columns: repeat(2, 1fr); }
+    .c3-xs{ grid-template-columns: repeat(3, 1fr); }
+    .c4-xs{ grid-template-columns: repeat(4, 1fr); }
+    
+    /* Sections */
+    #whoweare, #ourbusiness, #ourcorevalues, #ourteam, #missionvision, #about_people, .num_text, #about_missionceo, .tab-container, .exceptional-customer, 
+    #about_investorrelations, .footer{
+        max-width: 100%;
+        padding: 24px !important;
+        margin: 0;
+    }
+
+    /* Section Titles */
+    #whoweare h2, #ourbusiness h2, #ourteam h2, #ourcorevalues h2, #ourcorepurpose h2, #missionvision h2, h2.missionvision, 
+        #about_people h2, #about_missionceo h2, .ceo-div h2, .exceptional-customer h2, #about_investorrelations h2, #investor h2, 
+        #roi h2, #careers h2, #blog h2, #pressrelease h2{
+        max-width: 100%;
+        font-size: 1.8rem !important;
+        line-height: 50%;
+    }
+
+    /*** NEW *** WHO WE ARE */
+    #whoweare{
+        max-width: 100%;
+        margin-block: 3.5rem !important;
+        padding-block: 4.5rem 3rem !important;
+    }
+    #whoweare .left-left, #whoweare .left-right, #whoweare .small{
+        width: 100%;
+        gap: 0;     
+    }
+    #whoweare .left-left img, #whoweare .left-right img{
+        height: auto;
+        border-radius: 2.8rem;
+        width: 100% !important;
+    }
+    #whoweare .small{
+        width: 8.4rem;
+        height: 1.6rem;
+    }
+    #whoweare .left-left .small{
+        margin-top: 1rem;
+        margin-left: auto;
+    }
+    #whoweare .left-right .small{
+        margin-bottom: 1rem;
+    } 
+    #whoweare .inner{
+        gap: 1.5rem !important
+    }
+
+    #whoweare h2.desktop{
+        display: none !important;
+    }
+    #whoweare h2.mobile{
+        display: block;
+        text-align: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100%;
+        font-size: 1.5rem;
+        padding-bottom: 2rem !important;
+    }
+    #whoweare .tester{
+        gap: 0;
+    }
+
+    /* OUR BUSINESS */
+    #ourbusiness div div{
+        border: 0.5px solid #bbb;
+        border-radius: 13.35px;
+        margin: 23px;
+        padding-bottom: 24px;
+    }
+    #ourteam div div img{
+        border-radius: 13.35px 13.35px 0 0;
+    }
+    #ourteam div div div{
+        border-radius: 0 0 13.35px 13.35px;
+    }
+    #ourbusiness h2{
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    #ourbusiness h2, #ourbusiness p:nth-child(2){
+        width: 640px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: none !important;
+    }
+    #ourbusiness p:nth-child(2){
+        margin-block: 24px 64px;
+        width: 100%;
+        text-align: center !important;
+    }
+    #ourbusiness div div a{
+        margin-top: 1rem !important;
+        font-size: var(--text-font-size);
+        border: none !important;
+        padding-inline: 1rem;
+        color: var(--smashtech-color);
+    }
+    #ourbusiness img{
+        height: 196px;
+    }
+      
+    #ourbusiness div, #ourteam div{
+        gap: 32px !important;
+    }
+    #ourbusiness div div, #ourteam div div{
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    /* TEAM */
+    h3.team{
+        line-height: 3.5rem;
+    }
+
+    /* MISSION/VISION */
+    h2.missionvision{
+        text-align: center;
+        margin-block: 0;
+    }
+    .mission-desktop, .vision-desktop{
+        display: none !important;
+    }
+    #mission-mobile, #vision-mobile{
+        display: block;
+        padding: 1rem;
+    }
+    #mission-mobile > div, #vision-mobile > div{
+        display: flex;
+        align-items: center;
+        /* gap: 2rem */
+    }
+    
+    #mission-mobile p, #vision-mobile p{
+        margin: 0;
+        margin-bottom: 1.5rem !important;
+    }
+    #mission-mobile .icon, #vision-mobile .icon{
+        color: #020066;
+        margin-bottom: 2rem
+    }
+
+    /* VALUES */
+    .val{
+        gap: 0 !important;
+        margin-bottom: 4rem;
+    }
+    .val h3, .val img{
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .val h3{
+        line-height: 2rem !important;
+        margin-top: 1.4rem !important;
+    }
+    .val p{
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    .reverse img{
+        order: -1;
+    }
+
+    /* PEOPLE */
+    
+    #about_people h2{
+        line-height: 120%;
+    }
+
+    #about_people div p{
+        max-width: 100% !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .people{
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-bottom: 3rem !important;
+    }
+    .people div{
+        flex-direction: column;
+    }
+    .people .smashtech-button{
+        margin-block: 1rem 2rem !important;
+        width: 100%;
+        font-size: 1rem;
+        padding-block: .8rem;
+    }
+    .people-h2{
+        font-size: 1.8rem !important;
+        line-height: 110%;
+    }
+    .people img{
+        height: auto !important;
+        width: 100% !important;
+        border-radius: 1rem !important;
+    }
+    
+    #ourcorepurpose{
+        gap: 0 !important;
+        padding: 1rem !important;
+        padding-inline: 1.5rem;
+    }
+    .box{
+        gap: 0 !important
+    }
+    .square img{
+        width: 100%; 
+        height: 360px;
+        border-radius: 100%;
+    }
+    .num_text{
+        gap: 1rem;
+        padding-inline: 0 !important;
+        padding-bottom: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .num_text h1{
+        border: 2px solid #E5E5EF;
+        font-size: 2rem;
+        font-weight: 600;
+        padding: 0 !important;
+        border-radius: 100%;
+        width: 5.5rem;
+        height: 5.5rem;
+        margin: 0 auto !important;
+        align-content: center !important;
+        text-align: center;
+    }
+    .num_text h3{
+        font-size: 1.5rem;
+    }
+    .num_text p{
+        margin-block: 1rem 2rem;
+    }
+    .vertical-line {
+        display: block;
+        margin-top: .1rem;
+        height: 70%;
+    }
+    .smashtech-button{
+        font-size: 95% !important;  
+    }
+    
+    .video-banner {
+        height: 20rem; 
+        background-color: var(--smashtech-deep-grey);
+        padding: var(--content-edge);
+        padding-block: 2.5rem;
+        overflow: hidden;
+        margin-top: 5.4rem !important;
+    }
+    .banner-content h1, .banner-content span, .banner_otherpages h1{
+        font-size: 2rem;
+        line-height: 39px;
+    }
+    .banner-content h1 small{
+        font-size: 24px;
+    }
+    /* Banner other pages */
+    .banner_otherpages{
+        height: 17.8rem !important; 
+        background-color: var(--smashtech-deep-grey);
+        padding: var(--content-edge) !important;
+        padding-bottom: 4rem !important;
+        margin-bottom: 0;
+        overflow: hidden;
+        align-items: end;
+        margin-top: 5.4rem !important;
+    }
+    .banner_otherpages h1{
+        text-align: left;
+        width: 100%
+        /* align-content: end !important; */
+    }
+    /* ... additional styles */
+    .play-button {
+        font-size: 2rem !important;
+        padding: .5rem;
+        border-radius: .5rem;
+        width: 4rem;
+        margin-bottom: .5rem; 
+    }
+    .banner-content{
+        margin: 0 !important;
+        padding-bottom: 5rem !important;
+        padding-inline: 1.5rem;
+    }
+
+    #about_missionceo p{
+        width: 100% !important;
+    }
+    .ceo-div{
+        padding-inline: 1rem;
+    }
+    .ceo-div p, .ceo-div h2, .ceo-div h3, .ceo-div h4, .ceo-div hr{
+        padding: 0 !important;
+        margin-inline: 0;
+        width: 100%;
+    }
+    .ceo-div p{
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: left;
+    }
+    .ceo-div .smashtech-button{
+        font-size: 95% !important;
+        padding: .7rem 1.5rem;
+    }
+    
+    .tab-container .tabs{      
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        padding: 0 ;
+        margin: 0;
+        gap: 1rem;
+    }
+    .tab-container .tabs button{
+        font-size: 95% !important;
+        padding: .7rem 1rem;
+        width: 100%;
+    }
+    #commitment_to_sustainability h2{
+        line-height: 120%;
+    }
+    #commitment_to_sustainability .commitment-quality{
+        gap: 0;
+        padding: 1rem !important;
+    }
+    #commitment_to_sustainability .commitment-quality p{
+        width: 100% !important;
+        margin-block: 1rem 3rem;
+    }
+    .exceptional-customer{
+        width: 100%;
+        padding: 0;
+    }
+    .exceptional-customer .exceptional_cs{
+        width: 100%;
+    }
+    .exceptional-customer h2{
+        padding-block: 0 !important;
+        margin-block: 0 !important;
+        line-height: 110%;
+    }
+    .exceptional-customer div{
+        margin: 0;
+    }
+    .exceptional-customer img{
+        width: 100%;
+        height: auto;
+        /* border-radius: 30px; */
+        margin: 0 !important;
+    }
+
+    .small-map{
+        width: 100% !important;
+    }
+    .footer-menu .row > div{
+        display: flex;
+        gap: 1rem !important;
+    }
+    .footer-menu .row img{
+        width: 5.5rem !important;
+        height: auto !important;
+    }
+
+    /* Investor Relations */    
+    #about_investorrelations{
+        width: 100%;
+    }
+    #about_investorrelations{
+        margin-inline: 0 !important;
+    }
+    #about_investorrelations .swipe img{
+        padding: 3px !important;
+    }
+    #investor h2{
+        max-width: 100%;
+        font-size: 24px;
+        margin-block: 0 !important;
+    }
+    .slider-div{
+        padding-block: 2rem 0 !important;
+    }
+    .slider-p{
+        max-width: 100% !important;
+        padding: 0 1rem .5rem 1rem;
+    }
+
+    /* Department - person */
+    #dept{
+        width: 100%;
+        padding: 1rem;
+        margin: 0 !important;
+        gap: 1rem;
+    }
+    .dept_right div{
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+        font-size: 40% !important;
+    }
+    .dept_right h3{
+        font-size: 140% !important;
+    }
+    .dept_right .c3{
+        font-size: 70% !important;
+    }
+
+    /* Buy Shares */
+    .buy-shares > div{
+        width: 100%;
+    }
+    .num_text h3{
+        margin-top: 0 !important;
+    }
+    .buy-shares h3, .buy-shares p{
+        width: 100% !important;
+        margin: 0 !important;
+        gap: 0 !important
+    }
+
+    /* ROI */
+    #roi{ 
+        margin-top: 0 !important;
+        padding-top: 2rem !important;
+        width: 100%;
+        padding-inline: 0 !important;
+    }
+    #roi p{
+        margin-top: 0;
+    }
+    .roi-cards{
+        margin: 2rem 1rem !important;
+        border-radius: 1rem;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .roi-cards h3{
+        border-radius: 1rem;
+        font-size: 1.3rem;
+    }
+    .roi-cards a{
+        width: 100%;
+        margin: auto;
+    }
+
+    /* Person detail */
+    .banner_persondetail {
+        margin-top: 7rem !important;
+    }
+    .banner_persondetail .smash-light-bg{
+        padding-inline: 1rem;
+    }
+    .banner_persondetail .smash-light-bg img{
+        width: 3rem !important;
+        height: 3rem !important
+    }
+    .banner_persondetail > div{
+        padding-block: 0.5rem;
+        margin-bottom: 1.5rem !important;
+    }
+    .banner_persondetail .img-div{  
+        margin: 1rem !important;
+    }
+    .banner_persondetail img{
+        border-radius: .5rem;
+    }
+    .detail-div{
+        padding: 0 1rem;
+        padding-block: 3rem;
+        gap: 0;
+    }
+    .detail-div-icons h4{
+        margin-top: 0 !important;
+        padding-block: 0 4rem !important;
+    }
+    .detail-div-icons{
+        padding: 1rem;
+        padding-block: 0;
+    }
+    .detail-div-icons img{
+        width: 50%;
+    }
+    .smash-light-bg{
+        background-color: var(--smashtech-color-light);
+    }
+
+    /* Careers */
+    #careers{
+        background-color: var(--smashtech-bg-grey);
+        width: 100%;
+        padding-inline: 1rem;
+        padding-block: 1rem;
+    }
+    #careers > div{
+        gap: 0;
+    }
+    #careers h5{ 
+        font-size: 1rem;
+    }
+    .careers-cards{
+        padding: 2rem;
+    }
+    .careers-cards h3{
+        font-size: 1.5rem;
+        line-height: 140%;
+        margin-bottom: 1rem !important;
+    }
+    .careers.flex{
+        gap: .5rem !important;
+    }
+    .careers.flex p{
+        width: 100% !important;
+    }
+    .careers.flex img{
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+    .flex.careers-flex span{
+        padding: .3rem .5rem;
+    }
+    .flex.careers-flex span.nbsp{
+        display: none;
+    }
+    .careers-flex h2{
+        line-height: 155% !important;
+    }
+    .careers-flex p{
+        padding-block: 1rem !important;
+    }
+    .careers-flex p{
+        padding-left: 0 !important;
+    }
+
+    .careers-flex img, .careers-flex span{
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    /* Blog */
+    #blog{
+        margin-inline: 1rem;
+        padding: 0;
+    }
+    .blog-wrap{
+        gap: 0 !important;
+    }
+    .search-div{
+        background-color: #E6E5F0;
+        padding: 2rem;
+        margin-block: 3rem;
+        border-radius: 3rem;
+        gap: 0;
+        display: block;
+    }
+    .search-div input{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .search-div .smashtech-button{
+        padding-inline: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+    #blog .flex.tabs{
+        margin: auto;
+        display: flex;
+        gap: 1rem;
+        flex-wrap:wrap;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .smashtech-button.transparent{
+        align-items: center;
+    }
+    .smashtech-button.noborder{
+        border: none;
+        color: var(--p-color);
+        align-items: center;
+        min-width: 1rem;
+        background-color: var(--smashtech-bg-grey);
+        padding: 1rem !important;
+    }
+    .blog-wrap .smashtech-button{
+        width: 100%;
+        text-align: center;
+    }
+    #blog h2{
+        margin-top: 2rem !important;
+    }
+    .archives{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap !important;
+        gap: 1rem;
+    }
+    .archives .smashtech-button{
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    /* Faq */
+    .sections.faq{
+        padding-right: 0 !important;
+        gap: 0;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .faq{
+        gap: 0;
+    }
+    .accordion, .faq > div > h2, .faq > div > p{
+        padding-inline: 1rem !important;
+    }
+    .faq > div > h2{
+        margin-top: 2rem !important;
+    }
+    .accordion-button{
+        padding: .8rem 1.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+    .accordion-body{
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.7rem;
+        padding-block: .75rem 1.5rem;
+    }
+    .pie-div{
+        padding-left: 0;
+    }
+    .faq .pie{
+        height: 3rem;
+        margin-bottom: 1rem;
+    }  
+    .faq .pie:nth-child(1), .faq .pie:nth-child(4){
+        width: 70%;
+        margin-left: auto;
+    }
+    .faq .pie:nth-child(2), .faq .pie:nth-child(5){
+        width: 50%;
+    }
+    .faq .pie:nth-child(3), .faq .pie:nth-child(6){
+        background-color: #020066;
+        width: 30%;
+    }  
+
+    /* Job Application and Investment form */
+    .form-container {
+        width: 100% !important;
+        max-width: 100%;
+        margin: 0;
+        margin-block: 2rem 5rem;
+        padding: 1.5rem 1rem;
+    }
+      form input {
+        width: 100%;
+        padding: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+    .form-wrapper h1{
+        font-size: 2.5rem;
+    }
+      form label {
+        display: block;
+        margin: 1rem 0 0.5rem;
+        font-size: 1.5rem;
+        color: var(--p-color);
+      }
+      .next-btn {
+        cursor: pointer;
+        margin: 2rem auto 0;
+        transition: background 0.3s ease;
+        width: 100%;
+      }
+    .application-form .flex button{
+        color: var(--smashtech-color) !important;
+        margin: auto;
+        font-weight: bold;
+        font-size: 1.25rem;
+        background-color: white !important;
+    }
+    /* Logo */
+    .logo{
+        width: 3rem;
+        height: 3rem;
+    }
+    #logo > div, #logo > div > span{
+        font-size: 1.35rem !important;
+    }
+    .video-banner {
+        height: 30rem;
+        padding-block: 3rem;
+    }
+    .banner-content h1, .banner-content span{
+        font-size: 2.75rem;
+        line-height: 46px;
+    }
+    .banner-content h1 small{
+        font-weight: normal;
+        font-size: 1.45rem;
+        line-height: 40px;
+    }
+
+    /* OUR BUSINESS */
+    #ourbusiness{
+        padding-inline: 1rem !important;
+    }
+    #cover{
+        gap: 0 !important;
+    }
+    #ourbusiness div div{
+        border: 0.5px solid #ddd;
+        border-radius: 20px;
+        padding: 0 !important;
+        padding-bottom: 1.5rem !important;
+        margin: 0 !important;
+    }
+    #ourbusiness > p{
+        padding-top: 0 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p{
+        padding: 0;
+        line-height: 100%;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p, #ourbusiness div div a{
+        padding-inline: 1.25rem;
+    }
+    #ourbusiness div div h3{
+        margin-block: 1rem !important;
+        font-size: 1.6rem;
+    }
+    #ourbusiness div div p{
+        margin-block: 0 1rem !important;
+        line-height: 135%;
+    }
+    #ourbusiness div div > a{
+        font-size: var(--text-font-size);
+        color: var(--smashtech-color); 
+        margin-bottom: 10rem !important;
+    }
+    #ourbusiness div div:hover{
+        color: var(--smashtech-color);
+        border-color: #eee;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    #ourbusiness img{
+        height: 295px;
+        width: 100%;
+    }
+    .business-container img {
+        height: 10rem !important;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.4s ease;
+    }
+
+    /* Our core purpose - rework */    
+    #ourcorepurpose{
+        background-color: var(--smashtech-bg-grey);
+        width: 100% !important;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        padding-bottom: 4.5rem !important;
+    }
+    #ourcorepurpose .main{
+        width: 100%;
+        gap: 1rem;
+        overflow: hidden; 
+    }
+    #ourcorepurpose .half-circle-div{
+        width: 100% !important;
+        text-align: center;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 2rem !important;
+    }
+    .half-circle {
+        margin: 0 auto;
+        width: 300px;
+        height: 300px; 
+        background-color: var(--smashtech-deep-grey);
+        border-radius: 100%; 
+    }
+    #ourcorepurpose img.half-circle{
+        width: 85% !important;
+    }
+    
+    .ourcorepurpose-right-div{
+        padding: 0;
+        padding-inline: 1rem;
+    }
+    .ourcorepurpose-right-div .flex h1{
+        border: 4px solid #ddd;
+        line-height: 0 !important;
+        margin: 0 !important;
+        border-radius: 100%;
+        align-content: center;
+        padding: 33px;
+        height: 90px !important;
+    }
+    #ourcorepurpose h2{
+        /* background-color: red; */
+        line-height: 100%;
+        margin-block: 0 !important;
+        padding-block: 5rem 0 !important;
+    }
+    .ourcorepurpose-right-div .flex h3{
+        font-size: 1.6rem;
+        line-height: 120%;
+        width: 100%;
+    }
+    .ourcorepurpose-right-div .flex h3{
+        font-size: 1.6rem;
+        line-height: 120%;
+        width: 100%;
+    }
+    .line{
+        border: 2px solid #E5E5EF; 
+        height: 100%; 
+        margin: 0 auto;
+        margin-left: 3rem;
+        /* margin-top: -8px; */
+    }
+    .ourcorepurpose-right-div .flex.content{
+        align-items: center;
+        gap: 1rem;
+    }
+    .ourcorepurpose-right-div .flex.num{
+        width: 100%;
+    }
+    .ourcorepurpose-right-div .flex h3, .ourcorepurpose-right-div .flex p{
+        margin: 0 !important;
+    }
+    .ourcorepurpose-right-div .flex p{
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-left: 1.5rem !important;
+    }
+    .hidden{
+        visibility: hidden;
+    }
+
+    /* meet our team */
+    .sections.meetourteam h2{
+        padding-block: 4rem !important;
+    }
+    .sections.meetourteam > div{
+        margin-top: 2rem;
+    }
+
+    /* core values */
+    #ourcorevalues{
+        padding-inline: 5rem;
+    }
+    #ourcorevalues .val{
+        gap: 0;
+    }
+    #ourcorevalues h2{
+        margin-block: 2.2rem 1rem;
+    }
+    #ourcorevalues img{
+        width: 100%;
+        height: auto;
+        border-radius: 1.5rem;
+    }
+    #ourcorevalues .val > div > h3, #ourcorevalues .val > div > p{
+        width: 100%;
+    }
+    #ourcorevalues .val > div > h3{
+        font-size: 1.65rem;
+    }
+    #ourcorevalues .val > div > p{
+        margin-top: 1rem !important;
+    }
+    #ourcorevalues .val{
+        margin-block: 2rem;
+    }
+    .business-detail h3{
+        font-size: 1.2rem;
+        line-height: 140%;
+        margin-top: 2rem;
+    }
+    .partner{
+        padding-inline: 1rem;
+    }
+    img.partners{
+        width: 9rem !important;
+        height: auto !important;
+    }
+    .partner-flex{
+        gap: 1rem
+    }
+    .title-height{
+        line-height: 130% !important;
+    }
+    .form{
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+      .form label{
+        font-size: .9rem;
+      }
+      .form h3{
+        font-size: 1.5rem;
+      }
+      .form h6{
+        color: #03b;
+      }
+      .form input, .form select{
+        font-size: .9rem;
+        padding: .8rem;
+      }
+      .form select{
+        width: 100%;
+      }
+    
+    .corporate_docs h2{
+        line-height: 124% !important;
+    }
+}
+
+    /* ================================================= */
+    
+/* 2. PHONE LANDSCAPE */
+@media screen and (min-width: 577px) and (max-width: 767px){
+
+    #whoweare, #ourbusiness, #ourcorepurpose, #ourcorevalues{
+        padding-inline: 2.5rem !important;
+        /* background-color: green !important; */
+    }
+    /* Reusable Grid Columns */
+    .c1-sm, .c2-sm, .c3-sm, .c4-sm{
+        display: grid;
+    }    
+    .c1-sm{ grid-template-columns: repeat(1, 1fr); }
+    .c2-sm{ grid-template-columns: repeat(2, 1fr); }
+    .c3-sm{ grid-template-columns: repeat(3, 1fr); }
+    .c4-sm{ grid-template-columns: repeat(4, 1fr); }
+    
+    .video-banner {
+        height: 28rem; 
+        background-color: var(--smashtech-deep-grey);
+        padding: var(--content-edge);
+        margin-top: 0 !important;
+    }
+    /* ... additional styles */
+    .play-button {
+        font-size: 2rem !important;
+        padding: .5rem;
+        width: 5rem;
+    }
+    .banner-content{
+        margin: 0 !important;
+        padding-bottom: 5rem !important;
+        padding-inline: 1.5rem;
+    }
+    /* Our core purpose */
+    #ourcorepurpose .half-circle-div{
+        width: 70% !important;
+        margin: auto !important;
+        margin-top: 1.8rem !important;
+    }
+    h3.team, .val h3{
+        font-size: 1.15rem !important;
+    }
+    .business-container p, .business-container a, #ourcorevalues p{
+        font-size: .88rem !important;
+    }
+    #ourcorevalues .val{
+        gap: 2rem !important;
+    }
+    #ourcorevalues .val p{
+        line-height: 150% !important;
+    }
+    .menu {
+        max-height: 16rem; 
+        overflow-y: auto;      
+    }
+    .corporate_docs h2{
+        line-height: 124% !important;
+    }
+}
+
+/* 3. TABLETS and MEDIUM SCREENS like iPad Pro */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    #whoweare{
+        /* background-color: orange !important; */
+    }
+}
+
+/* 4. SMALL LAPTOP SCREENS */
+@media screen and (min-width: 1025px) and (max-width: 1206px){
+    #whoweare{
+        /* background-color: blue !important; */
+    }
+}
+
+/* 5. NORMAL LAPTOP SCREENS (E.G MY OWN 1366w) UP TO LARGE SCREENS*/
+/* FINAL == my laptop at home */
+@media screen and (min-width: 1207px) and (max-width: 1500px){
+    html{
+        font-size: 90%;  /* change for different device sizes */
+    }
+    .smashtech-button{
+        font-size: 95% !important;  
+    }
+    #ourcorevalues p{
+        font-size: 115%;  
+    }
+    h2{
+        font-size: 188%;  
+    }
+    h3{
+        font-size: 145%;  
+    }
+    .sections{
+        padding: var(--content-edge) !important;
+        padding-block: 3rem !important;
+    }
+    nav{
+        padding: var(--content-edge) !important;
+        padding-block: 0 !important;
+    }    
+    .menu {
+        gap: 2.2rem !important;
+      }
+    .dropdown{
+        margin-top: 2.4rem !important;
+    }
+    .dropdown a{
+        font-size: 12rem !important;
+    }
+    .dropdown {
+        padding-block: .4rem !important;
+    }
+    .dropdown-content ul li {
+        padding: .3rem 0 !important;
+    }
+    .dropdown-content ul li a {
+        /* background-color: blue !important; */
+        font-size: 1.05rem !important;
+        font-weight: normal !important;
+    }
+    button.menu-button, #careers{
+        font-size: 110% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        display: flex;
+    }
+    .banner_otherpages h1 {
+        font-size: 6.6rem;
+    }
+    
+    .ceo-div .smashtech-button{
+        font-size: 1rem !important;
+        padding: .7rem 1.45rem !important;
+    }
+    #whoweare{
+        padding: var(--content-normal) !important;
+        padding-block: 4.5rem !important;
+        margin-top: 7.5rem;
+    }
+    #whoweare .tester{        
+        gap: 3.5rem !important;
+    }
+    #whoweare img{
+        width: 100%;
+        height: auto;
+    }
+    #whoweare .tester .small{
+        height: 2.7rem;
+    }
+    #whoweare .left-left .small{
+        margin-top: 1.5rem;
+        width: 72%;
+        margin-left: auto;
+    }
+    #whoweare .left-right .small{
+        margin-bottom: 1.5rem;
+        width: 72%;
+    }
+
+    /* faq */
+    .sections.faq{
+        padding-right: 0 !important;
+        gap: 0;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .faq{
+        gap: 0;
+    }
+    .accordion, .faq > div > h2, .faq > div > p{
+        padding-inline: 2.5rem !important;
+    }
+    .faq > div > h2{
+        margin-top: 2rem !important;
+    }
+    .accordion-button{
+        padding: .8rem 1.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+    .accordion-body{
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.7rem;
+        padding-block: .75rem 1.5rem;
+    }
+    .pie-div{
+        padding-left: 0;
+    }
+    .faq .pie{
+        height: 3rem;
+        margin-bottom: 1rem;
+    }  
+    .faq .pie:nth-child(1), .faq .pie:nth-child(4){
+        width: 70%;
+        margin-left: auto;
+    }
+    .faq .pie:nth-child(2), .faq .pie:nth-child(5){
+        width: 50%;
+    }
+    .faq .pie:nth-child(3), .faq .pie:nth-child(6){
+        background-color: #020066;
+        width: 30%;
+    }
+
+
+    /* Blog */
+    #blog{
+        margin-inline: 1rem;
+        padding: 0;
+    }
+    .blog-wrap{
+        gap: 2.5rem !important;
+    }
+    .search-div{
+        background-color: #E6E5F0;
+        padding: 2rem 3rem;
+        margin-block: 3rem;
+        border-radius: 3rem;
+        gap: 0;
+    }
+    .search-div input{
+        width: 75%;
+        margin-right: 2rem;
+    }
+    .search-div .smashtech-button{
+        padding-inline: 3rem;
+        width: 20%;
+        text-align: center;
+    }
+    #blog .flex.tabs{
+        margin: auto;
+        display: flex;
+        gap: 1rem;
+        flex-wrap:wrap;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .smashtech-button.transparent{
+        align-items: center;
+        padding-block: .55rem;
+    }
+    .smashtech-button.noborder{
+        border: none;
+        color: var(--p-color);
+        align-items: center;
+        min-width: 1rem;
+        background-color: var(--smashtech-bg-grey);
+        padding: 1rem !important;
+    }
+    .blog-wrap .smashtech-button{
+        text-align: center;
+    }
+    #blog h2{
+        margin-top: 2rem !important;
+    }
+    .archives{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap !important;
+        gap: 1rem;
+    }
+
+    /* Buy shares */
+    .buy-shares p{
+        /* width: 100% !important; */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .num_text > div > h3, .num_text > div > p{
+        max-width: 70% !important;
+    }
+    
+    
+/* Careers */
+#careers{
+    background-color: var(--smashtech-bg-grey);
+    display: grid !important;
+    padding: var(--content-edge) !important;
+
+  }
+  #careers > div{
+    gap: 2rem;
+  }
+  #careers h2{ /* reusable section title */
+    width: 640px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border: none !important;
+    margin-bottom: 64px;
+    width: 1000px;
+    margin-bottom: .5rem !important;
+  }
+  #careers h5{ 
+    padding-block: 1rem;
+  }
+  #careers p{
+    margin-top: 0;
+  }
+  .careers-cards{
+    background-color: white;
+    border-radius: 0.6rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  .careers-cards h3{
+    font-size: 1.5rem;
+  }
+  .careers-cards .flex{
+    align-items: center;
+    justify-content: space-between; 
+  }
+  .careers-cards p{
+    margin-block: 1rem 2.5rem !important;
+  }
+  .careers-cards p a{
+    color: var(--smashtech-color);
+  }
+  .careers.flex{
+    margin: 0 auto !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .careers.flex p{
+    text-align: center;
+  }
+  .careers.flex img{
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+  .flex{
+    display: flex;
+    gap: 2rem;
+  }
+  .careers-flex{
+    margin: 0 !important;
+    width: 100% !important;
+    align-items: center;
+  }
+  .careers-flex h2, .careers-flex p{
+    text-align: left !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .careers-flex h2{
+    color: var(--p-color);
+  }
+  .careers-flex h2 span{
+    background-color: var(--smashtech-color-light);
+    color: var(--smashtech-color);
+    padding: 1rem;
+  }
+  .careers-flex p{
+    padding-left: 0.6rem !important;
+  }
+  .careers-flex img, .careers-flex span{
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .careers-icon{
+    width: 100px;
+    height: 100px;
+  }
+  .careers-cards .smashtech-button{
+    padding: .8rem 2.6rem;
+    font-weight: normal;
+  }
+  #recommend img{
+    margin-bottom: 2rem !important;
+    padding: 0 !important;
+  }
+
+    /* Logo */
+    .logo{
+        width: 3.9rem;
+        height: 3.9rem;
+    }
+    .video-banner {
+        padding: var(--content-normal);
+        padding-block: 5rem;
+    }
+    .banner-content h1, .banner-content span{
+        font-size: calc(var(--h1-font-size) * .85);
+        line-height: 90px;
+    }
+    .banner-content h1 small{
+        font-size: calc(var(--h1-font-size) * .63);
+    }
+
+    /* OUR BUSINESS */
+    #ourbusiness{
+        padding-inline: 4.9rem !important;
+    }
+    #cover{
+        gap: 1.62rem !important;
+    }
+    #ourbusiness div div{
+        border: 0.5px solid #ddd;
+        border-radius: 20px;
+        padding: 0 !important;
+        padding-bottom: 1.5rem !important;
+        margin: 0 !important;
+    }
+    #ourbusiness > p{
+        padding-top: 0 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p{
+        padding: 0;
+        line-height: 100%;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p, #ourbusiness div div a{
+        padding-inline: 1.25rem;
+    }
+    #ourbusiness div div h3{
+        margin-block: 1rem !important;
+    }
+    #ourbusiness div div p{
+        margin-block: 0 1rem !important;
+        line-height: 135%;
+    }
+    #ourbusiness div div > a{
+        font-size: var(--text-font-size);
+        color: var(--smashtech-color); 
+        margin-bottom: 10rem !important;
+    }
+    #ourbusiness div div:hover{
+        color: var(--smashtech-color);
+        border-color: #eee;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #ourbusiness h2, #ourbusiness p:nth-child(2){
+        width: 640px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: none !important;
+    }
+    #ourbusiness p:nth-child(2){
+        margin-block: 24px 96px;
+    }
+    #ourbusiness img{
+        height: 295px;
+        width: 100%;
+    }
+    .business-container {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+    }
+    .business-container img {
+        width: 100%;
+        height: 11rem !important;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.4s ease;
+    }
+    .business-container:hover img {
+        transform: scale(1.05);
+    }  
+
+    /* Our core purpose - rework */
+    .half-circle {
+        width: 400px; /* Set the width */
+        height: 700px; /* Set the height */
+        background-color: var(--smashtech-deep-grey); /* Set the color */
+        border-top-right-radius: 400px; /* Half of width */
+        border-bottom-right-radius: 400px; /* Half of width */
+    }
+    #ourcorepurpose{
+        background-color: var(--smashtech-bg-grey);
+    }
+    #ourcorepurpose .main{
+        gap: 4rem;
+        align-items: center !important;
+    }
+    .ourcorepurpose-right-div{
+        padding-right: 4.9rem;
+    }
+    .ourcorepurpose-right-div .flex h1{
+        border: 4px solid #ddd;
+        line-height: 0 !important;
+        margin: 0 !important;
+        border-radius: 100%;
+        align-content: center;
+        padding: 33px;
+        height: 90px !important;
+    }
+    #ourcorepurpose h2{
+        /* background-color: red; */
+        line-height: 100%;
+        margin-block: 0 !important;
+        padding-block: 5rem 0 !important;
+    }
+    .line-div{
+        /* width: 100px */
+        /* background-color: green; */
+    }
+    .line{
+        border: 2px solid #E5E5EF; 
+        height: 100%; 
+        margin: 0 auto;
+        margin-left: 3rem;
+        /* margin-top: -8px; */
+    }
+    .ourcorepurpose-right-div .flex.content{
+        align-items: center;
+        /* background-color: green; */
+        margin-right: 2.2rem
+    }
+    .ourcorepurpose-right-div .flex.num{
+        /* background-color: yellow; */
+        width: 95% !important;
+    }
+    .ourcorepurpose-right-div .flex h3, .ourcorepurpose-right-div .flex p{
+        margin: 0 !important;
+    }
+    .ourcorepurpose-right-div .flex p{
+        /* background-color: red; */
+        width: 90% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-left: 3.25rem !important;
+    }
+    .hidden{
+        visibility: hidden;
+    }
+    /* meet our team */
+    .sections.meetourteam h2{
+        padding-block: 2rem 0;
+    }
+    .sections.meetourteam > div{
+        margin-top: 2rem;
+        gap: 3rem
+    }
+    .sections.meetourteam .business-container img.team{
+        height: 300px !important;
+        object-fit: cover;
+        object-position: bottom;
+    }
+
+    /* core values */
+    #ourcorevalues{
+        padding: var(--content-normal) !important;
+    }
+    #ourcorevalues .val{
+        gap: 1.5rem
+    }
+    #ourcorevalues h2{
+        margin-block: 1.8rem 1rem;
+    }
+    #ourcorevalues img{
+        border-radius:var(--smash-border-radius);
+        height: 90%
+    }
+    #ourcorevalues .val > div > h3, #ourcorevalues .val > div > p{
+        width: 85%;
+    }
+    #ourcorevalues .val > div > p{
+        margin-top: .5rem !important;
+    }
+    #ourcorevalues .val{
+        margin-block: 2rem;
+    }
+    #pressrelease > div:nth-child(1){
+        /* background-color: pink !important; */
+        padding: var(--content-edge) !important;
+    }
+    #pressrelease > div > h2, .faq > div > h2{
+        /* background-color: yellow !important; */
+        margin-top: 7.5rem !important;
+    }
+    #ourcorevalues img{
+        border-radius: 1.35rem
+    }
+    .corporate_docs h2{
+        line-height: 124% !important;
+    }
+}
+
+/* FINAL == CEO's, Chris', Val's Laptops */
+@media screen and (min-width: 1501px) and (max-width: 1900px){
+    html{
+        font-size: 90%;  /* change for different device sizes */
+    }
+    .smashtech-button{
+        font-size: 95% !important;  
+    }
+    #ourcorevalues p{
+        font-size: 115%;  
+    }
+    h2{
+        font-size: 188%;  
+    }
+    h3{
+        font-size: 145%;  
+    }
+    .sections{
+        padding: var(--content-edge) !important;
+        padding-block: 3rem !important;
+    }
+    nav{
+        padding: var(--content-edge) !important;
+        padding-block: 0 !important;
+    }    
+    .menu {
+        gap: 2.2rem !important;
+      }
+    .dropdown{
+        margin-top: 2.4rem !important;
+    }
+    .dropdown a{
+        font-size: 12rem !important;
+    }
+    .dropdown {
+        padding-block: .4rem !important;
+    }
+    .dropdown-content ul li {
+        padding: .3rem 0 !important;
+    }
+    .dropdown-content ul li a {
+        /* background-color: blue !important; */
+        font-size: 1.05rem !important;
+        font-weight: normal !important;
+    }
+    button.menu-button, #careers{
+        font-size: 110% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        display: flex;
+    }
+    .banner_otherpages h1 {
+        font-size: 6.6rem;
+    }
+    
+    .ceo-div .smashtech-button{
+        font-size: 1rem !important;
+        padding: .7rem 1.45rem !important;
+    }
+    #whoweare{
+        padding: var(--content-normal) !important;
+        padding-block: 4.5rem !important;
+        margin-top: 7.5rem;
+    }
+    #whoweare .tester{        
+        gap: 3.5rem !important;
+    }
+    #whoweare img{
+        width: 100%;
+        height: auto;
+    }
+    #whoweare .tester .small{
+        height: 2.7rem;
+    }
+    #whoweare .left-left .small{
+        margin-top: 1.5rem;
+        width: 72%;
+        margin-left: auto;
+    }
+    #whoweare .left-right .small{
+        margin-bottom: 1.5rem;
+        width: 72%;
+    }
+
+    /* faq */
+    .sections.faq{
+        padding-right: 0 !important;
+        gap: 0;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .faq{
+        gap: 0;
+    }
+    .accordion, .faq > div > h2, .faq > div > p{
+        padding-inline: 2.5rem !important;
+    }
+    .faq > div > h2{
+        margin-top: 2rem !important;
+    }
+    .accordion-button{
+        padding: .8rem 1.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+    .accordion-body{
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.7rem;
+        padding-block: .75rem 1.5rem;
+    }
+    .pie-div{
+        padding-left: 0;
+    }
+    .faq .pie{
+        height: 3rem;
+        margin-bottom: 1rem;
+    }  
+    .faq .pie:nth-child(1), .faq .pie:nth-child(4){
+        width: 70%;
+        margin-left: auto;
+    }
+    .faq .pie:nth-child(2), .faq .pie:nth-child(5){
+        width: 50%;
+    }
+    .faq .pie:nth-child(3), .faq .pie:nth-child(6){
+        background-color: #020066;
+        width: 30%;
+    }
+
+    /* Blog */
+    #blog{
+        margin-inline: 1rem;
+        padding: 0;
+    }
+    .blog-wrap{
+        gap: 2.5rem !important;
+    }
+    .search-div{
+        background-color: #E6E5F0;
+        padding: 2rem 3rem;
+        margin-block: 3rem;
+        border-radius: 3rem;
+        gap: 0;
+    }
+    .search-div input{
+        width: 75%;
+        margin-right: 2rem;
+    }
+    .search-div .smashtech-button{
+        padding-inline: 3rem;
+        width: 20%;
+        text-align: center;
+    }
+    #blog .flex.tabs{
+        margin: auto;
+        display: flex;
+        gap: 1rem;
+        flex-wrap:wrap;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .smashtech-button.transparent{
+        align-items: center;
+        padding-block: .55rem;
+    }
+    .smashtech-button.noborder{
+        border: none;
+        color: var(--p-color);
+        align-items: center;
+        min-width: 1rem;
+        background-color: var(--smashtech-bg-grey);
+        padding: 1rem !important;
+    }
+    .blog-wrap .smashtech-button{
+        text-align: center;
+    }
+    #blog h2{
+        margin-top: 2rem !important;
+    }
+    .archives{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap !important;
+        gap: 1rem;
+    }
+    /* Buy shares */
+    .buy-shares p{
+        /* width: 100% !important; */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .num_text > div > h3, .num_text > div > p{
+        max-width: 70% !important;
+    }
+
+    /* Careers */
+    #careers{
+        background-color: var(--smashtech-bg-grey);
+        display: grid !important;
+        padding: var(--content-edge) !important;
+
+    }
+    #careers > div{
+        gap: 2rem;
+    }
+    #careers h2{ /* reusable section title */
+        width: 640px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: none !important;
+        margin-bottom: 64px;
+        width: 1000px;
+        margin-bottom: .5rem !important;
+    }
+    #careers h5{ 
+        padding-block: 1rem;
+    }
+    #careers p{
+        margin-top: 0;
+    }
+    .careers-cards{
+        background-color: white;
+        border-radius: 0.6rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+    }
+    .careers-cards h3{
+        font-size: 1.5rem;
+    }
+    .careers-cards .flex{
+        align-items: center;
+        justify-content: space-between; 
+    }
+    .careers-cards p{
+        margin-block: 1rem 2.5rem !important;
+    }
+    .careers-cards p a{
+        color: var(--smashtech-color);
+    }
+    .careers.flex{
+        margin: 0 auto !important;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .careers.flex p{
+        text-align: center;
+    }
+    .careers.flex img{
+        width: 4rem !important;
+        height: 4rem !important;
+    }
+    .flex{
+        display: flex;
+        gap: 2rem;
+    }
+    .careers-flex{
+        margin: 0 !important;
+        width: 100% !important;
+        align-items: center;
+    }
+    .careers-flex h2, .careers-flex p{
+        text-align: left !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    .careers-flex h2{
+        color: var(--p-color);
+    }
+    .careers-flex h2 span{
+        background-color: var(--smashtech-color-light);
+        color: var(--smashtech-color);
+        padding: 1rem;
+    }
+    .careers-flex p{
+        padding-left: 0.6rem !important;
+    }
+    .careers-flex img, .careers-flex span{
+        width: 100px !important;
+        height: 100px !important;
+    }
+    .careers-icon{
+        width: 100px;
+        height: 100px;
+    }
+    .careers-cards .smashtech-button{
+        padding: .8rem 2.6rem;
+        font-weight: normal;
+    }
+    #recommend img{
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+    }
+    /* Logo */
+    .logo{
+        width: 3.9rem;
+        height: 3.9rem;
+    }
+    .video-banner {
+        padding: var(--content-normal);
+        padding-block: 5rem;
+    }
+    .banner-content h1, .banner-content span{
+        font-size: calc(var(--h1-font-size) * .85);
+        line-height: 90px;
+    }
+    .banner-content h1 small{
+        font-size: calc(var(--h1-font-size) * .63);
+    }
+
+    /* OUR BUSINESS */
+    #ourbusiness{
+        padding-inline: 4.9rem !important;
+    }
+    #cover{
+        gap: 1.62rem !important;
+    }
+    #ourbusiness div div{
+        border: 0.5px solid #ddd;
+        border-radius: 20px;
+        padding: 0 !important;
+        padding-bottom: 1.5rem !important;
+        margin: 0 !important;
+    }
+    #ourbusiness > p{
+        padding-top: 0 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p{
+        padding: 0;
+        line-height: 100%;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p, #ourbusiness div div a{
+        padding-inline: 1.25rem;
+    }
+    #ourbusiness div div h3{
+        margin-block: 1rem !important;
+    }
+    #ourbusiness div div p{
+        margin-block: 0 1rem !important;
+        line-height: 135%;
+    }
+    #ourbusiness div div > a{
+        font-size: var(--text-font-size);
+        color: var(--smashtech-color); 
+        margin-bottom: 10rem !important;
+    }
+    #ourbusiness div div:hover{
+        color: var(--smashtech-color);
+        border-color: #eee;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #ourbusiness h2, #ourbusiness p:nth-child(2){
+        width: 640px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: none !important;
+    }
+    #ourbusiness p:nth-child(2){
+        margin-block: 24px 96px;
+    }
+    #ourbusiness img{
+        height: 295px;
+        width: 100%;
+    }
+    .business-container {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+    }
+    .business-container img {
+        width: 100%;
+        height: 11rem !important;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.4s ease;
+    }
+    .business-container:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Our core purpose - rework */
+    .half-circle {
+        width: 400px; /* Set the width */
+        height: 700px; /* Set the height */
+        background-color: var(--smashtech-deep-grey); /* Set the color */
+        border-top-right-radius: 400px; /* Half of width */
+        border-bottom-right-radius: 400px; /* Half of width */
+    }
+    #ourcorepurpose{
+        background-color: var(--smashtech-bg-grey);
+    }
+    #ourcorepurpose .main{
+        gap: 4rem;
+        align-items: center !important;
+    }
+    .ourcorepurpose-right-div{
+        padding-right: 4.9rem;
+    }
+    .ourcorepurpose-right-div .flex h1{
+        border: 4px solid #ddd;
+        line-height: 0 !important;
+        margin: 0 !important;
+        border-radius: 100%;
+        align-content: center;
+        padding: 33px;
+        height: 90px !important;
+    }
+    #ourcorepurpose h2{
+        /* background-color: red; */
+        line-height: 100%;
+        margin-block: 0 !important;
+        padding-block: 5rem 0 !important;
+    }
+    .line-div{
+        /* width: 100px */
+        /* background-color: green; */
+    }
+    .line{
+        border: 2px solid #E5E5EF; 
+        height: 100%; 
+        margin: 0 auto;
+        margin-left: 3rem;
+        /* margin-top: -8px; */
+    }
+    .ourcorepurpose-right-div .flex.content{
+        align-items: center;
+        /* background-color: green; */
+        margin-right: 2.2rem
+    }
+    .ourcorepurpose-right-div .flex.num{
+        /* background-color: yellow; */
+        width: 95% !important;
+    }
+    .ourcorepurpose-right-div .flex h3, .ourcorepurpose-right-div .flex p{
+        margin: 0 !important;
+    }
+    .ourcorepurpose-right-div .flex p{
+        /* background-color: red; */
+        width: 90% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-left: 3.25rem !important;
+    }
+    .hidden{
+        visibility: hidden;
+    }
+    /* meet our team */
+    .sections.meetourteam h2{
+        padding-block: 2rem 0;
+    }
+    .sections.meetourteam > div{
+        margin-top: 2rem;
+        gap: 3rem
+    }
+    .sections.meetourteam .business-container img.team{
+        height: 300px !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* core values */
+    #ourcorevalues{
+        padding: var(--content-normal) !important;
+    }
+    #ourcorevalues .val{
+        gap: 1.5rem
+    }
+    #ourcorevalues h2{
+        margin-block: 1.8rem 1rem;
+    }
+    #ourcorevalues img{
+        border-radius:var(--smash-border-radius);
+        height: 90%
+    }
+    #ourcorevalues .val > div > h3, #ourcorevalues .val > div > p{
+        width: 85%;
+    }
+    #ourcorevalues .val > div > p{
+        margin-top: .5rem !important;
+    }
+    #ourcorevalues .val{
+        margin-block: 2rem;
+    }
+    #pressrelease > div:nth-child(1){
+        /* background-color: pink !important; */
+        padding: var(--content-edge) !important;
+    }
+    #pressrelease > div > h2, .faq > div > h2{
+        /* background-color: yellow !important; */
+        margin-top: 7.5rem !important;
+    }
+    #ourcorevalues img{
+        border-radius: 1.35rem;
+    }
+    .form{
+        /* background-color: red; */
+        margin-top: 8rem !important;
+        padding: 3.38rem 3rem;
+        max-width: 50%;
+        margin: auto;
+        background-color: var(--smashtech-bg-grey);
+      }
+      .form label{
+        font-size: var(--text-font-size);
+      }
+      .form h3{
+        color: var(--smashtech-color);
+        font-size: 2rem;
+      }
+      .form h6{
+        color: #03b;
+      }
+      .form input, .form select{
+        font-size: 1rem;
+        padding: .8rem;
+        font-weight: 600;
+        color: #222; 
+      }
+      .form select{
+        width: 50%;
+      }
+    .corporate_docs h2{
+        line-height: 124% !important;
+    }
+}
+/* Val and CEO == 1920w */
+
+/* 6. My office system w1920 */
+/* FINAL == My office laptop */
+@media screen and (min-width: 1901px){
+    html{
+        font-size: 100%;  
+    }
+    .smashtech-button{
+        font-size: 95% !important;  
+    }
+    #ourcorevalues p{
+        font-size: 115%;  
+    }
+    h2{
+        font-size: 188%;  
+    }
+    h3{
+        font-size: 145%;  
+    }
+    .sections{
+        padding: var(--content-edge) !important;
+        padding-block: 3rem !important;
+    }
+    nav{
+        padding: var(--content-edge) !important;
+        padding-block: 0 !important;
+    }    
+    .menu {
+        gap: 2.2rem !important;
+      }
+    .dropdown{
+        margin-top: 2.4rem !important;
+    }
+    .dropdown a{
+        font-size: 12rem !important;
+    }
+    .dropdown {
+        padding-block: .4rem !important;
+    }
+    .dropdown-content ul li {
+        padding: .3rem 0 !important;
+    }
+    .dropdown-content ul li a {
+        /* background-color: blue !important; */
+        font-size: 1.05rem !important;
+        font-weight: normal !important;
+    }
+    button.menu-button, #careers{
+        font-size: 110% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        display: flex;
+    }
+    .banner_otherpages h1 {
+        font-size: 6.6rem;
+    }
+    
+    .ceo-div .smashtech-button{
+        font-size: 1rem !important;
+        padding: .7rem 1.45rem !important;
+    }
+    #whoweare{
+        padding: var(--content-normal) !important;
+        padding-block: 4.5rem !important;
+        margin-top: 7.5rem;
+    }
+    #whoweare .tester{        
+        gap: 3.5rem !important;
+    }
+    #whoweare img{
+        width: 100%;
+        height: auto;
+    }
+    #whoweare .tester .small{
+        height: 2.7rem;
+    }
+    #whoweare .left-left .small{
+        margin-top: 1.5rem;
+        width: 72%;
+        margin-left: auto;
+    }
+    #whoweare .left-right .small{
+        margin-bottom: 1.5rem;
+        width: 72%;
+    }
+
+    /* faq */
+    .sections.faq{
+        padding-right: 0 !important;
+        gap: 0;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .faq{
+        gap: 0;
+    }
+    .accordion, .faq > div > h2, .faq > div > p{
+        padding-inline: 2.5rem !important;
+    }
+    .faq > div > h2{
+        margin-top: 2rem !important;
+    }
+    .accordion-button{
+        padding: .8rem 1.5rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+    .accordion-body{
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.7rem;
+        padding-block: .75rem 1.5rem;
+    }
+    .pie-div{
+        padding-left: 0;
+    }
+    .faq .pie{
+        height: 3rem;
+        margin-bottom: 1rem;
+    }  
+    .faq .pie:nth-child(1), .faq .pie:nth-child(4){
+        width: 70%;
+        margin-left: auto;
+    }
+    .faq .pie:nth-child(2), .faq .pie:nth-child(5){
+        width: 50%;
+    }
+    .faq .pie:nth-child(3), .faq .pie:nth-child(6){
+        background-color: #020066;
+        width: 30%;
+    }
+
+    /* Blog */
+    #blog{
+        margin-inline: 1rem;
+        padding: 0;
+    }
+    .blog-wrap{
+        gap: 2.5rem !important;
+    }
+    .search-div{
+        background-color: #E6E5F0;
+        padding: 2rem 3rem;
+        margin-block: 3rem;
+        border-radius: 3rem;
+        gap: 0;
+    }
+    .search-div input{
+        width: 75%;
+        margin-right: 2rem;
+    }
+    .search-div .smashtech-button{
+        padding-inline: 3rem;
+        width: 20%;
+        text-align: center;
+    }
+    #blog .flex.tabs{
+        margin: auto;
+        display: flex;
+        gap: 1rem;
+        flex-wrap:wrap;
+        align-items: center;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    .smashtech-button.transparent{
+        align-items: center;
+        padding-block: .55rem;
+    }
+    .smashtech-button.noborder{
+        border: none;
+        color: var(--p-color);
+        align-items: center;
+        min-width: 1rem;
+        background-color: var(--smashtech-bg-grey);
+        padding: 1rem !important;
+    }
+    .blog-wrap .smashtech-button{
+        text-align: center;
+    }
+    #blog h2{
+        margin-top: 2rem !important;
+    }
+    .archives{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap !important;
+        gap: 1rem;
+    }
+    /* Buy shares */
+    .buy-shares p{
+        /* width: 100% !important; */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .num_text > div > h3, .num_text > div > p{
+        max-width: 70% !important;
+    }
+
+    /* Careers */
+    #careers{
+        background-color: var(--smashtech-bg-grey);
+        display: grid !important;
+        padding: var(--content-edge) !important;
+
+    }
+    #careers > div{
+        gap: 2rem;
+    }
+    #careers h2{ /* reusable section title */
+        width: 640px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: none !important;
+        margin-bottom: 64px;
+        width: 1000px;
+        margin-bottom: .5rem !important;
+    }
+    #careers h5{ 
+        padding-block: 1rem;
+    }
+    #careers p{
+        margin-top: 0;
+    }
+    .careers-cards{
+        background-color: white;
+        border-radius: 0.6rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+    }
+    .careers-cards h3{
+        font-size: 1.5rem;
+    }
+    .careers-cards .flex{
+        align-items: center;
+        justify-content: space-between; 
+    }
+    .careers-cards p{
+        margin-block: 1rem 2.5rem !important;
+    }
+    .careers-cards p a{
+        color: var(--smashtech-color);
+    }
+    .careers.flex{
+        margin: 0 auto !important;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .careers.flex p{
+        text-align: center;
+    }
+    .careers.flex img{
+        width: 4rem !important;
+        height: 4rem !important;
+    }
+    .flex{
+        display: flex;
+        gap: 2rem;
+    }
+    .careers-flex{
+        margin: 0 !important;
+        width: 100% !important;
+        align-items: center;
+    }
+    .careers-flex h2, .careers-flex p{
+        text-align: left !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    .careers-flex h2{
+        color: var(--p-color);
+    }
+    .careers-flex h2 span{
+        background-color: var(--smashtech-color-light);
+        color: var(--smashtech-color);
+        padding: 1rem;
+    }
+    .careers-flex p{
+        padding-left: 0.6rem !important;
+    }
+    .careers-flex img, .careers-flex span{
+        width: 100px !important;
+        height: 100px !important;
+    }
+    .careers-icon{
+        width: 100px;
+        height: 100px;
+    }
+    .careers-cards .smashtech-button{
+        padding: .8rem 2.6rem;
+        font-weight: normal;
+    }
+    #recommend img{
+        margin-bottom: 2rem !important;
+        padding: 0 !important;
+    }
+    /* Logo */
+    .logo{
+        width: 3.9rem;
+        height: 3.9rem;
+    }
+    .video-banner {
+        padding: var(--content-normal);
+        padding-block: 5rem;
+    }
+    .banner-content h1, .banner-content span{
+        font-size: calc(var(--h1-font-size) * .85);
+        line-height: 90px;
+    }
+    .banner-content h1 small{
+        font-size: calc(var(--h1-font-size) * .63);
+    }
+
+    /* OUR BUSINESS */
+    #ourbusiness{
+        padding-inline: 4.9rem !important;
+    }
+    #cover{
+        gap: 1.62rem !important;
+    }
+    #ourbusiness div div{
+        border: 0.5px solid #ddd;
+        border-radius: 20px;
+        padding: 0 !important;
+        padding-bottom: 1.5rem !important;
+        margin: 0 !important;
+    }
+    #ourbusiness > p{
+        padding-top: 0 !important;
+        margin-bottom: 2.5rem !important;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p{
+        padding: 0;
+        line-height: 100%;
+    }
+    #ourbusiness div div h3, #ourbusiness div div p, #ourbusiness div div a{
+        padding-inline: 1.25rem;
+    }
+    #ourbusiness div div h3{
+        margin-block: 1rem !important;
+    }
+    #ourbusiness div div p{
+        margin-block: 0 1rem !important;
+        line-height: 135%;
+    }
+    #ourbusiness div div > a{
+        font-size: var(--text-font-size);
+        color: var(--smashtech-color); 
+        margin-bottom: 10rem !important;
+    }
+    #ourbusiness div div:hover{
+        color: var(--smashtech-color);
+        border-color: #eee;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #ourbusiness h2, #ourbusiness p:nth-child(2){
+        width: 640px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: none !important;
+    }
+    #ourbusiness p:nth-child(2){
+        margin-block: 24px 96px;
+    }
+    #ourbusiness img{
+        height: 295px;
+        width: 100%;
+    }
+    .business-container {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+    }
+    .business-container img {
+        width: 100%;
+        height: 11rem !important;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.4s ease;
+    }
+    .business-container:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Our core purpose - rework */
+    .half-circle {
+        width: 400px; /* Set the width */
+        height: 700px; /* Set the height */
+        background-color: var(--smashtech-deep-grey); /* Set the color */
+        border-top-right-radius: 400px; /* Half of width */
+        border-bottom-right-radius: 400px; /* Half of width */
+    }
+    #ourcorepurpose{
+        background-color: var(--smashtech-bg-grey);
+    }
+    #ourcorepurpose .main{
+        gap: 4rem;
+        align-items: center !important;
+    }
+    .ourcorepurpose-right-div{
+        padding-right: 4.9rem;
+    }
+    .ourcorepurpose-right-div .flex h1{
+        border: 4px solid #ddd;
+        line-height: 0 !important;
+        margin: 0 !important;
+        border-radius: 100%;
+        align-content: center;
+        padding: 33px;
+        height: 90px !important;
+    }
+    #ourcorepurpose h2{
+        /* background-color: red; */
+        line-height: 100%;
+        margin-block: 0 !important;
+        padding-block: 5rem 0 !important;
+    }
+    .line-div{
+        /* width: 100px */
+        /* background-color: green; */
+    }
+    .line{
+        border: 2px solid #E5E5EF; 
+        height: 100%; 
+        margin: 0 auto;
+        margin-left: 3rem;
+        /* margin-top: -8px; */
+    }
+    .ourcorepurpose-right-div .flex.content{
+        align-items: center;
+        /* background-color: green; */
+        margin-right: 2.2rem
+    }
+    .ourcorepurpose-right-div .flex.num{
+        /* background-color: yellow; */
+        width: 95% !important;
+    }
+    .ourcorepurpose-right-div .flex h3, .ourcorepurpose-right-div .flex p{
+        margin: 0 !important;
+    }
+    .ourcorepurpose-right-div .flex p{
+        /* background-color: red; */
+        width: 90% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        padding-left: 3.25rem !important;
+    }
+    .hidden{
+        visibility: hidden;
+    }
+    /* meet our team */
+    .sections.meetourteam h2{
+        padding-block: 2rem 0;
+    }
+    .sections.meetourteam > div{
+        margin-top: 2rem;
+        gap: 3rem
+    }
+    /* .sections.meetourteam .business-container img.team{
+        height: 23.5rem !important;
+        object-fit: cover;
+        object-position: center;
+    } */
+
+    /* core values */
+    #ourcorevalues{
+        padding: var(--content-normal) !important;
+    }
+    #ourcorevalues .val{
+        gap: 1.5rem
+    }
+    #ourcorevalues h2{
+        margin-block: 1.8rem 1rem;
+    }
+    #ourcorevalues img{
+        border-radius:var(--smash-border-radius);
+        height: 90%
+    }
+    #ourcorevalues .val > div > h3, #ourcorevalues .val > div > p{
+        width: 85%;
+    }
+    #ourcorevalues .val > div > p{
+        margin-top: .5rem !important;
+    }
+    #ourcorevalues .val{
+        margin-block: 2rem;
+    }
+    #pressrelease > div:nth-child(1){
+        /* background-color: pink !important; */
+        padding: var(--content-edge) !important;
+    }
+    #pressrelease > div > h2, .faq > div > h2{
+        /* background-color: yellow !important; */
+        margin-top: 7.5rem !important;
+    }
+    #ourcorevalues img{
+        border-radius: 1.35rem;
+    }
+    .sections.footer{
+        padding-inline: 4.5rem !important;
+        margin-top: 0 !important;
+    }
+    .half-circle{
+       height: '560px'
+    }
+
+    .form{
+        /* background-color: red; */
+        margin-top: 8rem !important;
+        padding: 3.38rem 3rem;
+        max-width: 50%;
+        margin: auto;
+        background-color: var(--smashtech-bg-grey);
+      }
+      .form label{
+        font-size: var(--text-font-size);
+      }
+      .form h3{
+        color: var(--smashtech-color);
+        font-size: 2rem;
+      }
+      .form h6{
+        color: #03b;
+      }
+      .form input, .form select{
+        font-size: 1rem;
+        padding: .8rem;
+        font-weight: 600;
+        color: #222; 
+      }
+      .form select{
+        width: 50%;
+      }
+    
+}
