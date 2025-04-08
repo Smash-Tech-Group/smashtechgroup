@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { UilArrowDown, UilArrowRight } from '@iconscout/react-unicons';
 import { Link } from 'react-router-dom';
 import ceo from './../../../assets/images/ourteam/CEO.jpg';
+import md from './../../../assets/images/ourteam/MD.jpg';
 import ea from './../../../assets/images/ourteam/_EA.jpg';
 import gm from './../../../assets/images/ourteam/_GM.jpg';
 import hr from './../../../assets/images/ourteam/_HR.jpg';
@@ -40,6 +41,24 @@ const OurTeam = () => {
       image: ceo,
       slug: 'president_grp_ceo',
     },
+
+    {
+      title: 'Managing Director',
+      description: (() => {
+        const fullDescription =
+          `I am Paul Smith, a highly accomplished visionary leader, an empathetic entrepreneur, and a technological innovator. With a robust academic foundation that includes a B.Sc. in Business Administration, a B.Sc. in Accounting, and an M.Sc. in both Business Administration and Banking & Financial Support Services, I have built a career over the past two decades that blends strategic insight, empathy, and discipline to drive success across multiple industries.
+
+          My entrepreneurial journey began in 2007, when I took on the role of Managing Director at a Microfinance institution because of my problem-solving and result-driven persona. It was there that I honed my leadership skills, learned the intricacies of business management, and laid the groundwork for my future ventures. By 2012, I had a vision to create something transformative – Smash Group. However, recognizing the importance of continuous growth, I made the strategic decision to refine my abilities further, which led me to become the Management Executive at Business Network Worldwide in 2020. Over the next five years, I gained invaluable expertise in leadership, technology, and entrepreneurship, enriching my experience and expanding my vision.
+
+          Armed with a wealth of knowledge and practical insight, I returned to my initial vision with renewed vigor, relaunching Smash Group as Smash Technology. My focus on integrating cutting-edge technology into daily operations has allowed us to solve real-world problems on both a local and global scale. Today, Smash Technology is a pioneering force, with 13 subsidiaries across industries such as e-hailing, e-commerce, travel, real estate, transportation, and entrepreneur empowerment. Our flagship brands such as RideSmash, SmashWise, SmashTravels, SmashApartments, SmashHire, Qiimeet, SmashBuy, SmashFood247, SmashOffice are driving impactful change across their respective markets.
+
+          As a compassionate leader, I believe in leading with heart and by example. My commitment to integrity, consistency, hard work and empowering my team defines my approach. I strive to create a culture of innovation, collaboration, and growth. With an unwavering dedication to transforming industries and improving lives, I continue to drive Smash Technology toward new heights by delivering excellent and valuable solutions to our esteemed clients locally and globally.`;
+
+        return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
+      })(),
+      image: md,
+      slug: 'md_smash',
+    },
     
     {
       title: 'Executive Assistant to CEO',
@@ -62,23 +81,23 @@ const OurTeam = () => {
       image: ea,
       slug: 'exec_asst_to_ceo',
     },
-    {
-      title: 'General Manager',
-      description: (() => {
-        const fullDescription =
-          `I'm Yahaya Shedrack Abdulkadir, the General Manager Smash Technology. My desire for sales and business development for about 2 decades, grew when i found out that i had a deposit of leadership, skills and idea, and what it takes to meet the needs of clients/customer's at every given point in time. Am a graduate of BSc Economics from a reputable Nigerian university, MBA in marketing, Chartered in Project management, Professional Diploma in Operations management from Blessed cosmopolitan college UK and Chartered in Operations management from the American institute of oil and Gas USA.
+    // {
+    //   title: 'General Manager',
+    //   description: (() => {
+    //     const fullDescription =
+    //       `I'm Yahaya Shedrack Abdulkadir, the General Manager Smash Technology. My desire for sales and business development for about 2 decades, grew when i found out that i had a deposit of leadership, skills and idea, and what it takes to meet the needs of clients/customer's at every given point in time. Am a graduate of BSc Economics from a reputable Nigerian university, MBA in marketing, Chartered in Project management, Professional Diploma in Operations management from Blessed cosmopolitan college UK and Chartered in Operations management from the American institute of oil and Gas USA.
 
-          I started my career as a young sales officer in kano that was passionate and enthusiastic about getting results at all cost. In my pursuit for career growth and significant development, i was dedicated, rugged and dogged in ensuring i could climb through all odds just to achieve unprecedented success. However, it's been a magnanimous journey thus far.
+    //       I started my career as a young sales officer in kano that was passionate and enthusiastic about getting results at all cost. In my pursuit for career growth and significant development, i was dedicated, rugged and dogged in ensuring i could climb through all odds just to achieve unprecedented success. However, it's been a magnanimous journey thus far.
 
-          I have a vast experience in business and project development with proven track records of successfully implementing strategic initiatives and driving company's growth. Skilled in identifying opportunities, building partnerships and fostering on client relationships, a strong leadership abilities to lead cross functional teams, manage complex projects, and deliver results within budget and timeline. Am a very good effective communicator with exceptional negotiation and problem-solving skills, committed to fostering innovation and driving continuous improvement. An adept at analyzing market trends, developing actionable strategies, and delivering exceptional value for clients and stakeholders.
+    //       I have a vast experience in business and project development with proven track records of successfully implementing strategic initiatives and driving company's growth. Skilled in identifying opportunities, building partnerships and fostering on client relationships, a strong leadership abilities to lead cross functional teams, manage complex projects, and deliver results within budget and timeline. Am a very good effective communicator with exceptional negotiation and problem-solving skills, committed to fostering innovation and driving continuous improvement. An adept at analyzing market trends, developing actionable strategies, and delivering exceptional value for clients and stakeholders.
 
-          i am committed as the GM in taking Smash technology to greater heights and ensuring that the vision, dreams and aspiration of what will be of the company will be achieved through collective efforts of the entire staff and high level display of expertise in making the company a global brand known for excellence.`;
+    //       i am committed as the GM in taking Smash technology to greater heights and ensuring that the vision, dreams and aspiration of what will be of the company will be achieved through collective efforts of the entire staff and high level display of expertise in making the company a global brand known for excellence.`;
 
-        return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
-      })(),
-      image: gm,
-      slug: 'gm',
-    },
+    //     return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
+    //   })(),
+    //   image: gm,
+    //   slug: 'gm',
+    // },
     {
       title: 'Group Head of Business Operations',
       description: (() => {
@@ -377,26 +396,26 @@ const OurTeam = () => {
       image: segun,
       slug: 'software_engineer',
     },
-    {
-      title: 'Lead Full Stack Engineer',
-      description: (() => {
-        const fullDescription =
-          `I am Uwem Akpabot. I emphasize that software should be created in a way that it is easy to maintain in the long run. 
-        Engineering and proper Architecture should be applied to software to make it easy to use, easy to reuse or modify, and perform flawlessly over 
-        a long period of time and continue to meet users' needs.
+    // {
+    //   title: 'Lead Full Stack Engineer',
+    //   description: (() => {
+    //     const fullDescription =
+    //       `I am Uwem Akpabot. I emphasize that software should be created in a way that it is easy to maintain in the long run. 
+    //     Engineering and proper Architecture should be applied to software to make it easy to use, easy to reuse or modify, and perform flawlessly over 
+    //     a long period of time and continue to meet users' needs.
 
-        In 2013, I earned a Master's Degree with Merit in Software Engineering in the UK - University of Greenwich, London, I am a Microsoft Certified Professional 
-        with progressive professional experience working with several technologies for over a decade. FHI 360, Luday, Zyzics, and Tasty Foods Belvedere 
-        are just few of the organizations that my productivity was showcased with good leadership quality.
+    //     In 2013, I earned a Master's Degree with Merit in Software Engineering in the UK - University of Greenwich, London, I am a Microsoft Certified Professional 
+    //     with progressive professional experience working with several technologies for over a decade. FHI 360, Luday, Zyzics, and Tasty Foods Belvedere 
+    //     are just few of the organizations that my productivity was showcased with good leadership quality.
 
-        Joining Smash Technology is a dream come true; a vision that aligns with mine. Vibrant, innovative, and smart place to work in. 
-        A visionary CEO and intelligent teams across brands; they push my drive even further.`;
+    //     Joining Smash Technology is a dream come true; a vision that aligns with mine. Vibrant, innovative, and smart place to work in. 
+    //     A visionary CEO and intelligent teams across brands; they push my drive even further.`;
 
-        return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
-      })(),
-      image: uwem,
-      slug: 'leadfs',
-    },
+    //     return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
+    //   })(),
+    //   image: uwem,
+    //   slug: 'leadfs',
+    // },
   ]; 
 
   const [visibleProfiles, setVisibleProfiles] = useState(14);  // Start with the first 14 profiles visible
@@ -407,7 +426,7 @@ const OurTeam = () => {
 
   return (
     <>
-    <div className="sections meetourteam" id="ourbusiness">
+    <div className="sections meetourteam max-screen" id="ourbusiness">
       <h2>Meet Our Team</h2>
         
       <div className="c2 c2-sm c1-xs">

@@ -62,6 +62,10 @@ img{
   max-width: 100%;
   height: auto;
 }
+
+
+
+
 .menu-button#careers{
   background-color: white;
   padding: 0 !important;
@@ -133,7 +137,7 @@ p{
 #whoweare{
   width: 100% !important;
   background-color: var(--smashtech-bg-grey);
-  margin-top: 12rem;
+  /* padding-top: 12rem; */
 }
 .tester{
   gap: 5.7rem;
@@ -192,10 +196,10 @@ p{
 #ourbusiness p:nth-child(2){
   margin-block: 24px 96px;
 }
-#ourbusiness img{
+/* #ourbusiness img{
   height: 295px;
   width: 100% !important;
-}
+} */
 .business-container {
   display: inline-block;
   position: relative;
@@ -203,7 +207,7 @@ p{
 }
 .business-container img {
   width: 100%;
-  height: 295px;
+  min-height: 300px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
@@ -226,10 +230,15 @@ p{
   color: var(--smashtech-color);
 }
 
+/* CAREERS */
+#bigText {
+  font-size: 3rem;
+}
+
 
 /* TEAM */
 #ourbusiness img.team{
-  height: 27.6rem;
+  /* height: 27.6rem; */
   border: none;
 }
 
@@ -958,7 +967,7 @@ iframe{
 }
 .exceptional-customer img{
   width: 600px;
-  height: 600px;
+  /* height: 600px; */
   /* border-radius: 30px; */
   margin-bottom: 99px;
 }
@@ -1032,10 +1041,9 @@ iframe{
   margin: auto;
 }
 img.big{
-  width: 424px;
-  height: 600px;
-  /* left: 1040px; */
-  padding: 32px 0px 0px 0px;
+  width: 100%;
+  height: auto;
+ 
   gap: 10px;
   border-radius: 30px;
 }
@@ -1045,6 +1053,16 @@ img.big{
   padding: 16px 24px 16px 24px;
   gap: 10px;
   border-radius: 50px;
+}
+
+#articles {
+  align-content: center;
+  text-align: center;
+  padding: 1rem 5rem;
+}
+
+#articles h2 {
+  padding-bottom: 2rem;
 }
 
 /* =================== */
@@ -1402,6 +1420,11 @@ img.big{
 }
 .sections.faq{
 }
+
+.max-screen{
+  margin: 0 auto;
+}
+
 .accordion-item{
   padding: 0 !important;
   /* background-color: red; */
@@ -1562,3 +1585,4 @@ p.partner{
 .form select{
   width: 50%;
 }
+

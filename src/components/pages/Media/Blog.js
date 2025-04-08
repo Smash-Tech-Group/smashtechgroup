@@ -127,6 +127,9 @@ const Blog = (props) => {
             <Link to="/" className="smashtech-button swipe-button transparent">2020</Link>
             <Link to="/" className="smashtech-button swipe-button transparent">2019</Link>
             <Link to="/" className="smashtech-button swipe-button transparent">2018</Link>
+            <Link to="/" className="smashtech-button swipe-button transparent">2017</Link>
+            <Link to="/" className="smashtech-button swipe-button transparent">2016</Link>
+            <Link to="/" className="smashtech-button swipe-button transparent">2015</Link>
         </div>
     </div>
 

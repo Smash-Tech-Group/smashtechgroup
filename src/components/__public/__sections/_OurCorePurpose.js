@@ -10,7 +10,7 @@ const OurCorePurpose = () => {
         <div className="half-circle-div">
           <div>
             <img src={core_purpose} className="half-circle" title="Core Purpose" alt="Core Purpose" 
-               style={{ width: '100%', border: '0.5rem solid #F34B02'}}/>
+               style={{ width: '100%'}}/>
           </div>
         </div>
 

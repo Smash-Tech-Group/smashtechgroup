@@ -31,6 +31,8 @@ import PrivacyPolicy from './pages/Other/PrivacyPolicy';
 import TermsAndConditions from './pages/Other/TermsAndConditions';
 import PasswordPolicy from './pages/Other/PasswordPolicy';
 import Corporate_Docs from './pages/About/Corporate_Docs';
+import Agro from './__public/__sections/About/AgricBlog'
+import Gold from './__public/__sections/About/Gold'
 
 const Main = () => {
   const company =  'Smash Technology';
@@ -74,6 +76,8 @@ const Main = () => {
       <Route path="/termsandconditions" element={<TermsAndConditions company={company} />} />
       <Route path="/passwordpolicy" element={<PasswordPolicy company={company} />} />
       <Route path="/corporate-documents" element={<Corporate_Docs company={company} />} />
+      <Route path="/agric-blog" element={<Agro company={company} />} />
+      <Route path="/gold" element={<Gold company={company} />} />
     </Routes>
 
     <Footer />

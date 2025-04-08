@@ -23,7 +23,7 @@ const Careers = (props) => {
     <div className="sections" id="about_people">
         <div className="flex careers-flex">
             <img src={icon} className="careers-icon" /> 
-            <h2>Launch Your <span>Career</span> With Us</h2>
+            <h2 id="bigText">Launch Your <span>Career</span> With Us</h2>
         </div>
 
         <div className="flex careers-flex">
@@ -38,11 +38,11 @@ const Careers = (props) => {
         <h2>Current Openings</h2>
         <p className="text-center">We are currently seeking qualified candidates for these positions</p>
 
-        <h5>Vacant Positions: 3</h5>
+        <h5>Vacant Positions: 0</h5>
         
         <div className="c2_1 c1-sm c1-xs">
             <div className="c1">
-                <div className="careers-cards">
+                {/* <div className="careers-cards">
                     <div className="flex">
                         <h3>Product Designer</h3>
                         19 days ago
@@ -59,9 +59,9 @@ const Careers = (props) => {
                         </p>
                         <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="careers-cards">
+                {/* <div className="careers-cards">
                     <div className="flex">
                         <h3>Customer Service Representative</h3>
                         19 days ago
@@ -78,9 +78,9 @@ const Careers = (props) => {
                         </p>
                         <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link>
                     </div>
-                </div>
+                </div> */}
 
-                <div className="careers-cards">
+                {/* <div className="careers-cards">
                     <div className="flex">
                         <h3>Customer Service Representative</h3>
                         19 days ago
@@ -97,7 +97,7 @@ const Careers = (props) => {
                         </p>
                         <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div id="recommend">

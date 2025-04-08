@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import frame1 from '../../../../assets/images/otherpages/inner/frames/Frame Ridesmash.png'
 import frame2 from '../../../../assets/images/otherpages/inner/frames/Frame smashapartment.png'
-import frame3 from '../../../../assets/images/otherpages/inner/frames/Frame smashbookings.png'
 import frame4 from '../../../../assets/images/otherpages/inner/frames/Frame smashfood.png'
 import frame5 from '../../../../assets/images/otherpages/inner/frames/Frame smashtech.png'
 import frame6 from '../../../../assets/images/otherpages/inner/frames/Frame smashtravals.png'
@@ -19,6 +18,8 @@ import framebig3 from '../../../../assets/images/otherpages/inner/frames/Frame 3
 import framebig4 from '../../../../assets/images/otherpages/inner/frames/Frame 310.png'
 import framebig5 from '../../../../assets/images/otherpages/inner/frames/Frame 301.png'
 import framebig6 from '../../../../assets/images/otherpages/inner/frames/Frame 297.png'
+import argic from '../../../../assets/images/otherpages/inner/argic.png'
+import gold from '../../../../assets/images/otherpages/inner/gold.png'
 
 const InvestorRelations = (props) => {
   useEffect(() => {
@@ -29,6 +30,8 @@ const InvestorRelations = (props) => {
     <>    
     <Header />
     <Banner_otherpages title="Investor Relations" image={image} />
+
+    <marquee behavior="scroll" direction="left" scrollamount="10">
 
     <div className="sections" id="about_investorrelations">
 
@@ -56,12 +59,13 @@ const InvestorRelations = (props) => {
           },
         }}
         autoplay={{
-          delay: 3000,
+          delay: 10000000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
         >
 
+        <marquee behavior="scroll" direction="right" scrollamount="12">
         <div>
           <SwiperSlide>          
             <div className="swipe">
@@ -72,12 +76,6 @@ const InvestorRelations = (props) => {
           <SwiperSlide>          
             <div className="swipe">
               <img src={frame2} className="small" title="" alt="" />
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>          
-            <div className="swipe">
-              <img src={frame3} className="small" title="" alt="" />
             </div>
           </SwiperSlide>
 
@@ -112,10 +110,12 @@ const InvestorRelations = (props) => {
           </SwiperSlide>
 
         </div>
+        </marquee>
       </Swiper>
 
     </div>
-      
+    </marquee>
+
     <div className="slider-div" id="investor">
       <h2>Our Public Listed Companies</h2>
       
@@ -127,35 +127,39 @@ const InvestorRelations = (props) => {
       </div>
       
       <Swiper 
-        spaceBetween={11}
-        breakpoints={{
-          1206: {
-              slidesPerView: 3.5, /* 5. NORMAL LAPTOPS (E.G MY OWN) TO LARGE @media screen and (min-width: 1207px)*/
-          },
-          1024: {
-            slidesPerView: 3.5, /* 4. SMALL LAPTOP SCREENS @media screen and (min-width: 1025px) and (max-width: 1206px) */
-          },
-          767: {
-              slidesPerView: 3, /* 3. MEDIUM SCREENS @media screen and (min-width: 768px) and (max-width: 1024px) */
-          },
-          576: {
-          slidesPerView: 2, /* 2. TABLETS @media screen and (min-width: 577px) and (max-width: 767px) */
-          },
-          350: {
-              slidesPerView: 1.3, /* 1. SMALL/MOBILE @media screen and (min-width: 351px) and (max-width: 576px) */
-          },
-          // when window width is >= 0px (default for all sizes)
-          0: {
-            slidesPerView: 1.3,
-          },
-        }}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay]}
-        >
+       spaceBetween={21}
+       breakpoints={{
+           1206: {
+               slidesPerView: 3.5,
+           },
+           1024: {
+               slidesPerView: 3.5,
+           },
+           767: {
+               slidesPerView: 3,
+           },
+           576: {
+               slidesPerView: 2,
+           },
+           350: {
+               slidesPerView: 1.3,
+           },
+           0: {
+               slidesPerView: 1.3,
+           },
+       }}
+       autoplay={{
+            delay: 3000,
+           disableOnInteraction: false,
+       }}
+       modules={[Autoplay]}
+       loop={true} 
 
+       loopFillGroupWithBlank={true} 
+       speed={300} 
+   >
+
+        <marquee behavior="scroll" direction="right" scrollamount="12">
         <div>
           <SwiperSlide>          
             <div className="swipe">
@@ -192,12 +196,23 @@ const InvestorRelations = (props) => {
               <img src={framebig6} className="big" title="" alt="" />
             </div>
           </SwiperSlide>
-
+          
         </div>
+
+        </marquee>
       </Swiper>
       </div>
-
-    <Map />
+      
+        <div id='articles'>
+          <h2>Smash Technology Articles</h2>
+            <div>
+              <div className="c2 c2-sm c1-xs val">
+                <a href='/agric-blog'><img src={argic} title="" alt="" /></a>
+                <a href='/gold'><img src={gold} title="" alt="" /></a>
+            </div>
+          </div>
+      <Map />
+      </div>
   </>
   );
 }
