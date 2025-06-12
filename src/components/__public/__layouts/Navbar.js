@@ -129,6 +129,7 @@ const Navbar = () => {
                   <li><Link to="/about#exceptional_cs">Exceptional Customer Service</Link></li>
                   <li><Link to="/investor-relations">Investor Relations</Link></li>
                   <li><Link to="/smash-people">People</Link></li>
+                  {/* <li><Link to="/onboarding">Onboarding</Link></li> */}
                 </ul>
               </div>
             </div>
@@ -170,9 +171,7 @@ const Navbar = () => {
             </div>
           )}
         </li>
-        <li className="menu-item" title="Browse our careers">
-          <Link to="/careers" className="menu-button" id="careers">Careers</Link>
-        </li>
+        
         <li className="menu-item" title="Media">
           <button onClick={() => toggleDropdown('media')} className="menu-button">
             Media<span className={`caret ${openDropdown === 'media' ? 'rotate' : ''}`}><UilAngleDown /></span>
@@ -190,6 +189,14 @@ const Navbar = () => {
               </div>
             </div>
           )}
+        </li>
+
+        <li className="menu-item" title="Browse our careers">
+          <Link to="/careers" className="menu-button" id="careers">Careers</Link>
+        </li>
+
+        <li className="menu-item" title="Browse our Onboarding">
+          <Link to="/onboarding" className="menu-button" id="careers">Onboarding</Link>
         </li>
       </ul>
 

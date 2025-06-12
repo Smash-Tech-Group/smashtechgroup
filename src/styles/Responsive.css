@@ -1108,7 +1108,7 @@
     #whoweare{
         padding: var(--content-normal) !important;
         padding-block: 4.5rem !important;
-        margin-top: 7.5rem;
+        /* margin-top: 7.5rem; */
     }
     #whoweare .tester{        
         gap: 3.5rem !important;
@@ -1621,7 +1621,7 @@
     #whoweare{
         padding: var(--content-normal) !important;
         padding-block: 4.5rem !important;
-        margin-top: 7.5rem;
+        /* margin-top: 7.5rem; */
     }
     #whoweare .tester{        
         gap: 3.5rem !important;
@@ -2159,7 +2159,7 @@
     #whoweare{
         padding: var(--content-normal) !important;
         padding-block: 4.5rem !important;
-        margin-top: 7.5rem;
+        /* margin-top: 7.5rem; */
     }
     #whoweare .tester{        
         gap: 3.5rem !important;

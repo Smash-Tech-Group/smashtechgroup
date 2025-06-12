@@ -46,13 +46,13 @@ const OurTeam = () => {
       title: 'Managing Director',
       description: (() => {
         const fullDescription =
-          `I am Paul Smith, a highly accomplished visionary leader, an empathetic entrepreneur, and a technological innovator. With a robust academic foundation that includes a B.Sc. in Business Administration, a B.Sc. in Accounting, and an M.Sc. in both Business Administration and Banking & Financial Support Services, I have built a career over the past two decades that blends strategic insight, empathy, and discipline to drive success across multiple industries.
+          `Faith Idukpaye is a leader with a difference having a degree in Health Sciences and a Master’s degree in Project Management. With over a decade of experience in managerial roles, she has built a reputation for strategic leadership, operational excellence, and transformative business growth.
 
-          My entrepreneurial journey began in 2007, when I took on the role of Managing Director at a Microfinance institution because of my problem-solving and result-driven persona. It was there that I honed my leadership skills, learned the intricacies of business management, and laid the groundwork for my future ventures. By 2012, I had a vision to create something transformative – Smash Group. However, recognizing the importance of continuous growth, I made the strategic decision to refine my abilities further, which led me to become the Management Executive at Business Network Worldwide in 2020. Over the next five years, I gained invaluable expertise in leadership, technology, and entrepreneurship, enriching my experience and expanding my vision.
+          Her extensive background in the insurance sector has honed her expertise in risk assessment, compliance, and customer-centric service delivery. As the Head of the Ushering Unit, she demonstrates exceptional organizational and people management skills, ensuring seamless coordination and top-tier service standards.
 
-          Armed with a wealth of knowledge and practical insight, I returned to my initial vision with renewed vigor, relaunching Smash Group as Smash Technology. My focus on integrating cutting-edge technology into daily operations has allowed us to solve real-world problems on both a local and global scale. Today, Smash Technology is a pioneering force, with 13 subsidiaries across industries such as e-hailing, e-commerce, travel, real estate, transportation, and entrepreneur empowerment. Our flagship brands such as RideSmash, SmashWise, SmashTravels, SmashApartments, SmashHire, Qiimeet, SmashBuy, SmashFood247, SmashOffice are driving impactful change across their respective markets.
+          A firm believer in empowering teams, she fosters a work culture where independence, innovation, and accountability thrive. Her leadership style is a unique blend of effective communication, collaboration, and mentorship, guiding her team to become self-sufficient problem-solvers rather than dependents.
 
-          As a compassionate leader, I believe in leading with heart and by example. My commitment to integrity, consistency, hard work and empowering my team defines my approach. I strive to create a culture of innovation, collaboration, and growth. With an unwavering dedication to transforming industries and improving lives, I continue to drive Smash Technology toward new heights by delivering excellent and valuable solutions to our esteemed clients locally and globally.`;
+          Upon her inception and guidance, Smash Technology Limited continues to push boundaries, delivering excellent solutions while maintaining a customer-first approach to business success.`;
 
         return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
       })(),
@@ -60,27 +60,27 @@ const OurTeam = () => {
       slug: 'md_smash',
     },
     
-    {
-      title: 'Executive Assistant to CEO',
-      description: (() => {
-        const fullDescription =
-          `As an Executive Assistant to the CEO at Smash Technology, my career journey has been a dynamic and rewarding experience. From managing complex schedules and coordinating high-level meetings to streamlining communication across teams, I’ve gained invaluable insights into organizational operations and strategic decision-making.
+    // {
+    //   title: 'Executive Assistant to CEO',
+    //   description: (() => {
+    //     const fullDescription =
+    //       `As an Executive Assistant to the CEO at Smash Technology, my career journey has been a dynamic and rewarding experience. From managing complex schedules and coordinating high-level meetings to streamlining communication across teams, I’ve gained invaluable insights into organizational operations and strategic decision-making.
 
-          This role has allowed me to develop a diverse skill set, including problem-solving, multitasking, and fostering strong professional relationships. Each challenge has provided an opportunity for growth, enabling me to better anticipate needs and contribute to the company’s success.
+    //       This role has allowed me to develop a diverse skill set, including problem-solving, multitasking, and fostering strong professional relationships. Each challenge has provided an opportunity for growth, enabling me to better anticipate needs and contribute to the company’s success.
 
-          The process has been a continuous learning experience, deepening my understanding of leadership, business processes, and effective collaboration. I’m excited to further expand my knowledge and contribute to impactful initiatives moving forward.
+    //       The process has been a continuous learning experience, deepening my understanding of leadership, business processes, and effective collaboration. I’m excited to further expand my knowledge and contribute to impactful initiatives moving forward.
 
-          A brief description of how i joined Smash Technology
+    //       A brief description of how i joined Smash Technology
 
-          I first came across the vacancy for Smash Technology online, and after reading through the job description, I became intrigued. To learn more about the company, I visited their Instagram page and was immediately impressed by the way the team collaborates. The uniformity in their approach and the positive, dynamic energy stood out to me. It seemed like a place where teamwork and innovation thrive. Having never worked with a tech company before, I saw this as an exciting opportunity to grow and gain valuable experience. I was eager to be part of such a forward-thinking company and contribute to its success.
+    //       I first came across the vacancy for Smash Technology online, and after reading through the job description, I became intrigued. To learn more about the company, I visited their Instagram page and was immediately impressed by the way the team collaborates. The uniformity in their approach and the positive, dynamic energy stood out to me. It seemed like a place where teamwork and innovation thrive. Having never worked with a tech company before, I saw this as an exciting opportunity to grow and gain valuable experience. I was eager to be part of such a forward-thinking company and contribute to its success.
           
-          Ezugwu Onyinyechukwu`;
+    //       Ezugwu Onyinyechukwu`;
 
-        return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
-      })(),
-      image: ea,
-      slug: 'exec_asst_to_ceo',
-    },
+    //     return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
+    //   })(),
+    //   image: ea,
+    //   slug: 'exec_asst_to_ceo',
+    // },
     // {
     //   title: 'General Manager',
     //   description: (() => {
@@ -216,25 +216,25 @@ const OurTeam = () => {
       image: gracious,
       slug: 'grp_head_media_it_communications',
     },
-    {
-      title: 'Head, Admin Operations',
-      description: (() => {
-        const fullDescription =
-          `My name is Paul Alex Abiche a dedicated and highly motivated administrative professional currently serving as the Admin Manager at Smash Technology. With a proven track record of excellence in administrative management, I plays a pivotal role in ensuring the smooth and efficient operation of the organization.
+    // {
+    //   title: 'Head, Admin Operations',
+    //   description: (() => {
+    //     const fullDescription =
+    //       `My name is Paul Alex Abiche a dedicated and highly motivated administrative professional currently serving as the Admin Manager at Smash Technology. With a proven track record of excellence in administrative management, I plays a pivotal role in ensuring the smooth and efficient operation of the organization.
 
-          Driven by a deep passion for administration, I excels at streamlining processes, enhancing organizational efficiency, and fostering collaboration among teams. My proactive approach to problem-solving and attention to detail have made me a cornerstone in maintaining the operational integrity of Smash Technology.
+    //       Driven by a deep passion for administration, I excels at streamlining processes, enhancing organizational efficiency, and fostering collaboration among teams. My proactive approach to problem-solving and attention to detail have made me a cornerstone in maintaining the operational integrity of Smash Technology.
 
-          Beyond my administrative expertise, I am fueled by a profound interest in technology and innovation. I envisions a future where technology serves as a catalyst for growth, transforming businesses and society. This vision inspires me to stay ahead of industry trends and leverage cutting-edge tools to drive impactful change within the organization.
+    //       Beyond my administrative expertise, I am fueled by a profound interest in technology and innovation. I envisions a future where technology serves as a catalyst for growth, transforming businesses and society. This vision inspires me to stay ahead of industry trends and leverage cutting-edge tools to drive impactful change within the organization.
 
-          My quest for innovation is evident in my commitment to integrating modern solutions into administrative practices. I believes that technology and creativity go hand in hand in shaping a sustainable and progressive workplace culture.
+    //       My quest for innovation is evident in my commitment to integrating modern solutions into administrative practices. I believes that technology and creativity go hand in hand in shaping a sustainable and progressive workplace culture.
 
-          With a focus on continuous learning and improvement, I remains an advocate for adopting forward-thinking strategies that align with the ever-evolving tech landscape. My passion for administration and innovation makes me a valuable leader in Smash Technology's mission to push the boundaries of what’s possible.`;
+    //       With a focus on continuous learning and improvement, I remains an advocate for adopting forward-thinking strategies that align with the ever-evolving tech landscape. My passion for administration and innovation makes me a valuable leader in Smash Technology's mission to push the boundaries of what’s possible.`;
 
-        return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
-      })(),
-      image: admin,
-      slug: 'head_admin_operations',
-    },
+    //     return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
+    //   })(),
+    //   image: admin,
+    //   slug: 'head_admin_operations',
+    // },
     {
       title: 'Team Lead, Ridesmash',
       description: (() => {
@@ -262,7 +262,7 @@ const OurTeam = () => {
       slug: 'team_lead_ridesmash',
     },
     {
-      title: 'Team Lead, Smashwise',
+      title: 'KYC Officer',
       description: (() => {
         const fullDescription =
           `I joined Smash Technology on 5th June, 2024 as a Customer Support Executive. I still laugh when I think about how I came straight from my previous job, dressed in a suit, for the interview. The CEO, a compassionate man, saw something in me and offered me the position.

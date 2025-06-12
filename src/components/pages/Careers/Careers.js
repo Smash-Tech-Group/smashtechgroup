@@ -42,62 +42,224 @@ const Careers = (props) => {
         
         <div className="c2_1 c1-sm c1-xs">
             <div className="c1">
-                {/* <div className="careers-cards">
+                <div className="careers-cards">
                     <div className="flex">
-                        <h3>Product Designer</h3>
-                        19 days ago
+                        <h3>Auditor - Accountant</h3>
+                        On-Site
                     </div>
                     <div>
                         <span><UilBriefcase /> Full Time</span> &nbsp; 
-                        <span><UilLocationPoint /> Abuja</span>
+                        <span><UilLocationPoint /> Abuja (300k Salary)</span>
                     </div>
                     <div>
-                        <p>As a dynamic and growing company looking for talented individuals to join our team,
-                            we offer a unique opportunity to work on cutting-edge technologies and shape the future of 
-                            app-based services we offer a unique opportunity to work on cutting-edge technologies and shape the future of 
-                            app-based services. <Link to="/" className="">Read more </Link> 
+                        <p>
+                            Minimum of 5 years' experience as an external audit and risk advisor.<br></br>
+                            Professional certifications in either ACA, ACCA, CIA or CISA.<br></br>
+                            BSc or its equivalent in Accountant/Statistis.<br></br>
+                            Proficiency in accounting software (eg. Sage, SAP, Oracle, IFRS and GAAP),
+                            data-analysis tools (Excel, Power BI), and audit-management systems.<br></br>
+                            Execellent communication, Analitical thinking and interpersonal skils.<br></br>
+                            Tech Savvy and highly confidental.
+                            {/* <Link to="/" className="">Read more </Link>  */}
                         </p>
-                        <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
                     </div>
-                </div> */}
+                </div>
 
-                {/* <div className="careers-cards">
+                <div className="careers-cards">
                     <div className="flex">
-                        <h3>Customer Service Representative</h3>
-                        19 days ago
+                        <h3>Customer Service</h3>
+                        On-Site
                     </div>
                     <div>
                         <span><UilBriefcase /> Full Time</span> &nbsp; 
-                        <span><UilLocationPoint /> Abuja</span>
+                        <span><UilLocationPoint /> Abuja, Lagos and Benin (150k Salary)</span>
                     </div>
                     <div>
-                        <p>As a dynamic and growing company looking for talented individuals to join our team,
-                            we offer a unique opportunity to work on cutting-edge technologies and shape the future of 
-                            app-based services we offer a unique opportunity to work on cutting-edge technologies and shape the future of 
-                            app-based services. <Link to="/" className="">Read more </Link> 
+                        <p>
+                            BSc or its equivalent.<br></br>
+                            Minimum of 3 years experience.<br></br>
+                            Abiliy to work under pressure.<br></br>
+                            Excellent communication, problem-solving and interpersonal skills.<br></br>
+                            Tech Savvy and sound knowledge of CRM tools.<br></br>
+                            Expertise in negotiation and closing deals.
+                            {/* <Link to="/" className="">Read more </Link>  */}
                         </p>
-                        <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
                     </div>
-                </div> */}
+                </div>
 
-                {/* <div className="careers-cards">
+                <div className="careers-cards">
                     <div className="flex">
-                        <h3>Customer Service Representative</h3>
-                        19 days ago
+                        <h3>Sales Executive</h3>
+                        On-Site
                     </div>
                     <div>
                         <span><UilBriefcase /> Full Time</span> &nbsp; 
-                        <span><UilLocationPoint /> Abuja</span>
+                        <span><UilLocationPoint /> Abuja. Lagos and Benin (120k Salary)</span>
                     </div>
                     <div>
-                        <p>As a dynamic and growing company looking for talented individuals to join our team,
-                            we offer a unique opportunity to work on cutting-edge technologies and shape the future of 
-                            app-based services we offer a unique opportunity to work on cutting-edge technologies and shape the future of 
-                            app-based services. <Link to="/" className="">Read more </Link> 
+                        <p>
+                            BSc or its equivalent.<br></br>
+                            Minimum of 3 years experience with solid marketing strategies.<br></br>
+                            Execellent interpersonal, negotiation, and communication skills.<br></br>
+                            Solid revenue-generation ability.<br></br>
+                            Tech Savvy and sound knowledge of CRM tools.<br></br>
+                            Sales expertise in relationship bulding and dea-closing.<br></br>
+                            Demonstrated ability to exceed aggressive sales targets and KPIs
+                            {/* <Link to="/" className="">Read more </Link>  */}
                         </p>
-                        <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
                     </div>
-                </div> */}
+                </div>
+
+                <div className="careers-cards">
+                    <div className="flex">
+                        <h3>Female P.A</h3>
+                        On-Site
+                    </div>
+                    <div>
+                        <span><UilBriefcase /> Full Time</span> &nbsp; 
+                        <span><UilLocationPoint /> Abuja (250k Salary)</span>
+                    </div>
+                    <div>
+                        <p>
+                            BSc or its equivalent.<br></br>
+                            Minimum of 3 years experience.<br></br>
+                            Flexible work shift and highly confidential persona.<br></br>
+                            Execellent attentive, communication and organizatinal interpersonal skills.<br></br>
+                            Tech Savvy and sound knowledge in virtual assitance.<br></br>
+                            Expertise in meeting coordination and report writting.<br></br>
+                            Ability to maintain confidentiality and handle sensitive information with discretion.<br></br>
+                            Attention to detail and creative problem solving abilities.
+                            {/* <Link to="/" className="">Read more </Link>  */}
+                        </p>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
+                    </div>
+                </div>
+
+                <div className="careers-cards">
+                    <div className="flex">
+                        <h3>Customer Support</h3>
+                        On-Site
+                    </div>
+                    <div>
+                        <span><UilBriefcase /> Full Time</span> &nbsp; 
+                        <span><UilLocationPoint /> Abuja, Lagos and Benin (150k Salary)</span>
+                    </div>
+                    <div>
+                        <p>
+                            BSc or its equivalent.<br></br>
+                            Minimum of 3 years experience.<br></br>
+                            Abiliy to work under pressure.<br></br>
+                            Excellent communication, problem-solving and interpersonal skills.<br></br>
+                            Tech Savvy and sound knowledge of CRM tools.<br></br>
+                            Expertise in negotiation and closing deals.
+                            {/* <Link to="/" className="">Read more </Link>  */}
+                        </p>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
+                    </div>
+                </div>
+
+                <div className="careers-cards">
+                    <div className="flex">
+                        <h3>Illustrtor/Motion Designer</h3>
+                        On-Site
+                    </div>
+                    <div>
+                        <span><UilBriefcase /> Full Time</span> &nbsp; 
+                        <span><UilLocationPoint /> Abuja, Lagos and Benin (150k Salary)</span>
+                    </div>
+                    <div>
+                        <p>
+                            BSc or its equivalent.<br></br>
+                            Minimum of 3 years experience. Animation skill is anadded advantage.<br></br>
+                            Expertise in Adobe After-effects, Adobe illustrator, Photoshop and Figma.<br></br>
+                            Excellent creativity, storytelling, communication and interpersonal skills.<br></br>
+                            Strong Portfolio link showcasing Adobe After-affect, illustrations and motion design.<br></br>
+                            Familiarity with 3D animation tools (Blender, Cinema 4D) is a plus.
+                            {/* <Link to="/" className="">Read more </Link>  */}
+                        </p>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
+                    </div>
+                </div>
+
+                <div className="careers-cards">
+                    <div className="flex">
+                        <h3>Driver</h3>
+                        On-Site
+                    </div>
+                    <div>
+                        <span><UilBriefcase /> Full Time</span> &nbsp; 
+                        <span><UilLocationPoint /> Abuja (80k Salary)</span>
+                    </div>
+                    <div>
+                        <p>
+                            A Minimum of SSCE or its equivalent.<br></br>
+                            Strong knowledge of road traffic laws, vehicle maintenance and road networks.<br></br>
+                            Minimum of 5 years driving experience.<br></br>
+                            Excellent creativity, storytelling, communication and interpersonal skills.<br></br>
+                            Valid drivers' license with clean driving record.<br></br>
+                            Ability to work Flexible hours, including weekends & pulbic holidays.<br></br>
+                            Excellent communication and interpersonal skills.
+                            {/* <Link to="/" className="">Read more </Link>  */}
+                        </p>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
+                    </div>
+                </div>
+
+                <div className="careers-cards">
+                    <div className="flex">
+                        <h3>Business Manager</h3>
+                        On-Site
+                    </div>
+                    <div>
+                        <span><UilBriefcase /> Full Time</span> &nbsp; 
+                        <span><UilLocationPoint /> Abuja/Lagos (250k Salary)</span>
+                    </div>
+                    <div>
+                        <p>
+                            BSc or it equivalent in Admininstration/Management.<br></br>
+                            Minimum of 5 years experience as a Closer.<br></br>
+                            Excellent communication, interpersonal and leadership skills.<br></br>
+                            Tech Savvy and sound knowledge of Business Analysis.<br></br>
+                            Expertise in negotiationand closing deals.
+                            {/* <Link to="/" className="">Read more </Link>  */}
+                        </p>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
+                    </div>
+                </div>
+
+                <div className="careers-cards">
+                    <div className="flex">
+                        <h3>Admin and Facility</h3>
+                        On-Site
+                    </div>
+                    <div>
+                        <span><UilBriefcase /> Full Time</span> &nbsp; 
+                        <span><UilLocationPoint /> Abuja (200k Salary)</span>
+                    </div>
+                    <div>
+                        <p>
+                            BSc or it equivalent in Admininstration/Management.<br></br>
+                            Minimum of 5 years experience.<br></br>
+                            Excellent communication, interpersonal and facility management skills.<br></br>
+                            Strong vendor management, negotiation and budgeting abilities.<br></br>
+                            Tech Savvy and open to travel.
+                            {/* <Link to="/" className="">Read more </Link>  */}
+                        </p>
+                        <h5>Send your CV to <i>hr@smashtechgroup.com</i></h5>
+                        {/* <Link to="/job-application" className="smashtech-button swipe-button">Apply</Link> */}
+                    </div>
+                </div>
             </div>
 
             <div id="recommend">
@@ -109,7 +271,7 @@ const Careers = (props) => {
         
     </div>
 
-    <div className="sections" id="about_people">
+    {/* <div className="sections" id="about_people">
         <h2>Why Choose Smash Technology?</h2>
         
         <div className="flex careers">
@@ -125,7 +287,7 @@ const Careers = (props) => {
 
             <img src={frame2} title="" alt="" />
         </div>
-    </div>
+    </div> */}
 
     <Map />
     </>

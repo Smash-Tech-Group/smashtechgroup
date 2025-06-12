@@ -207,7 +207,7 @@ p{
 }
 .business-container img {
   width: 100%;
-  min-height: 300px;
+  min-height: 236px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }

@@ -33,6 +33,7 @@ import PasswordPolicy from './pages/Other/PasswordPolicy';
 import Corporate_Docs from './pages/About/Corporate_Docs';
 import Agro from './__public/__sections/About/AgricBlog'
 import Gold from './__public/__sections/About/Gold'
+import Onboarding from './__public/__sections/Onboarding'
 
 const Main = () => {
   const company =  'Smash Technology';
@@ -55,6 +56,7 @@ const Main = () => {
       <Route path="/sales-marketing-department" element={<Dept_SalesMarketing company={company} />} />
 
       <Route path="/buy-shares" element={<BuyShares company={company} />} />
+      <Route path="/onboarding" element={<Onboarding company={company}/>}   />
       <Route path="/buy-shares-form" element={<BuySharesForm company={company} />} />
       <Route path="/invest-with-us" element={<InvestmentsWithROI company={company} />} />
       <Route path="/login" element={<Login company={company} />} />
