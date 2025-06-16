@@ -98,7 +98,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar py-4">
       <Link to="/" id="logo">
         <img src={logo} className="logo" title="Smash Technology Logo" alt="Smash Technology Logo" />
 
@@ -109,7 +109,7 @@ const Navbar = () => {
 
       <li className="dvs-header__trigger" onClick={toggleMenu}><UilApps /></li>
 
-      <ul className={`menu ${isOpen ? 'is-open' : ''}`}>
+      <ul className={`menu lg:flex lg:items-center lg:gap-4 !text-[14px] ${isOpen ? 'is-open' : ''}`}>
         <li className="menu-item" title="Click to browse company">
           <button
             onClick={() => toggleDropdown('company')}
@@ -195,9 +195,9 @@ const Navbar = () => {
           <Link to="/careers" className="menu-button" id="careers">Careers</Link>
         </li>
 
-        <li className="menu-item" title="Browse our Onboarding">
+        {/* <li className="menu-item" title="Browse our Onboarding">
           <Link to="/onboarding" className="menu-button" id="careers">Onboarding</Link>
-        </li>
+        </li> */}
       </ul>
 
       <div className="contacts">

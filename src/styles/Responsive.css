@@ -46,7 +46,7 @@
     /*** NEW *** WHO WE ARE */
     #whoweare{
         max-width: 100%;
-        margin-block: 3.5rem !important;
+        /* margin-block: 3.5rem !important; */
         padding-block: 4.5rem 3rem !important;
     }
     #whoweare .left-left, #whoweare .left-right, #whoweare .small{
@@ -763,25 +763,21 @@
         padding-top: 0 !important;
         margin-bottom: 2.5rem !important;
     }
-    #ourbusiness div div h3, #ourbusiness div div p{
-        padding: 0;
-        line-height: 100%;
-    }
+
     #ourbusiness div div h3, #ourbusiness div div p, #ourbusiness div div a{
         padding-inline: 1.25rem;
     }
-    #ourbusiness div div h3{
+    /* #ourbusiness div div h3{
         margin-block: 1rem !important;
         font-size: 1.6rem;
-    }
-    #ourbusiness div div p{
+    } */
+    /* #ourbusiness div div p{
         margin-block: 0 1rem !important;
         line-height: 135%;
-    }
+    } */
     #ourbusiness div div > a{
         font-size: var(--text-font-size);
         color: var(--smashtech-color); 
-        margin-bottom: 10rem !important;
     }
     #ourbusiness div div:hover{
         color: var(--smashtech-color);
@@ -795,7 +791,7 @@
     .business-container img {
         /* height: 10rem; */
         width: 100%;
-        object-fit: contain;
+        /* object-fit: contain; */
         object-position: top;
         transition: transform 0.4s ease;
     }
@@ -852,16 +848,16 @@
         margin-block: 0 !important;
         padding-block: 5rem 0 !important;
     }
-    .ourcorepurpose-right-div .flex h3{
+    /* .ourcorepurpose-right-div .flex h3{
         font-size: 1.6rem;
         line-height: 120%;
         width: 100%;
-    }
-    .ourcorepurpose-right-div .flex h3{
+    } */
+    /* .ourcorepurpose-right-div .flex h3{
         font-size: 1.6rem;
         line-height: 120%;
         width: 100%;
-    }
+    } */
     .line{
         border: 2px solid #E5E5EF; 
         height: 100%; 
@@ -1053,9 +1049,9 @@
     .smashtech-button{
         font-size: 95% !important;  
     }
-    #ourcorevalues p{
+    /* #ourcorevalues p{
         font-size: 115%;  
-    }
+    } */
     h2{
         font-size: 188%;  
     }
@@ -1309,7 +1305,7 @@
   }
   .flex{
     display: flex;
-    gap: 2rem;
+    /* gap: 2rem; */
   }
   .careers-flex{
     margin: 0 !important;
@@ -1375,7 +1371,7 @@
     }
     #ourbusiness div div{
         border: 0.5px solid #ddd;
-        border-radius: 20px;
+        border-radius: 23px;
         padding: 0 !important;
         padding-bottom: 1.5rem !important;
         margin: 0 !important;
@@ -1401,7 +1397,6 @@
     #ourbusiness div div > a{
         font-size: var(--text-font-size);
         color: var(--smashtech-color); 
-        margin-bottom: 10rem !important;
     }
     #ourbusiness div div:hover{
         color: var(--smashtech-color);
@@ -2637,4 +2632,35 @@
         width: 50%;
       }
     
+}
+
+
+
+.custom-container {
+  background: linear-gradient(45deg,rgba(179,178,209,1), rgba(250,183,153,1));
+  padding: 8px;
+  padding-left: 0;
+  width: 450px;
+  height: 602px;
+}
+
+@media (max-width: 640px) {
+  .custom-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-container {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 400px) {
+  .custom-container {
+    width: 300px;
+    height: 200px;
+  }
 }

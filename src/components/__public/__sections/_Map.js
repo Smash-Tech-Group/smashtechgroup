@@ -1,10 +1,10 @@
 const Map = () => {
   return (
     <>
-    <div className="sections" id="about_people">
-      <h2>Locate Us</h2>
+    <div className="text-center mt-[2rem] md:mt-[4rem]">
+      <h2 className="text-[32px] font-semibold mb-3">Locate Us</h2>
       
-      <div className="text-center">
+      <div className="text-center px-[25.9px] text-black mx-auto md:w-[40%] mb-[3rem]">
         <p>We’re here to help! Use the map below to find our headquarters. Our team is ready to assist you with any inquiries or support you may need.</p>
       </div>
     </div>

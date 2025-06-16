@@ -29,8 +29,8 @@ const OurBusiness = () => {
   return (
     <>
     <div className="sections" id="ourbusiness">
-        <h2>Our Business</h2>
-        <p>
+        <h2 className='!font-semibold !text-[32px]'>Our Business</h2>
+        <p className='text-base leading-[26px]'>
           Smash Technology is a group of innovative app-based subsidiaries designed to simplify and enhance your daily life. 
           We've transformed our services from manual operations to a tech-driven experience, offering a variety of essential 
           apps for both local and international users.
@@ -39,17 +39,19 @@ const OurBusiness = () => {
       <div className="c3 c2-sm c1-xs" id="cover">
       
         {categories.map((categ, index) => (
-          <div key={index} className="business-container">
+          <div key={index} className="business-container text-base">
             <img src={categ.image} title="" alt="" />
-            <h3 style={{ textAlign: 'left' }}>{categ.title}</h3>
-            <p>{categ.description}</p>
-            <Link to={`/business/${categ.slug}`}>Learn more <UilArrowRight /></Link>
+            
+            <h3 className='font-semibold md:!my-[1rem] text-[18px]' style={{ textAlign: 'left' }}>{categ.title}</h3>
+            <p className='text-base !leading-[26px]'>{categ.description}</p>
+            
+            <Link className='flex px-[1.25px] !mb-0 items-center !text-base' to={`/business/${categ.slug}`}>Learn more <UilArrowRight className='flex items-center h-5 w-5' /></Link>
           </div>
         ))}
       </div>
 
-      <div className="text-center">
-        <p><b><Link to="/all-businesses" style={{ color: '#333' }}>View All Our Businesses <UilArrowRight /></Link></b></p>
+      <div className="py-[2rem] text-center mx-auto block w-[100%]">
+        <p><b><Link  className='flex px-[1.25px] !mb-0 items-center text-base justify-center '  to="/all-businesses" style={{ color: '#333' }}>View All Our Businesses <UilArrowRight /></Link></b></p>
       </div>
     </div>
     </>

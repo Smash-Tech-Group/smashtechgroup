@@ -99,7 +99,7 @@ img{
 h2, h3{
   font-weight: 600;
   font-size: 48px;
-  line-height: 58.5px;
+  line-height: 38.5px;
   color: var(--smashtech-color);
   text-transform: capitalize !important;
 }
@@ -216,7 +216,7 @@ p{
 }
 #ourbusiness div div h3, #ourbusiness div div p{
   padding-inline: 1rem;
-  padding-top: .8rem;
+  padding-top: .4rem;
 }
 #ourbusiness div div p{
   margin-block: 0 .75rem !important;
@@ -275,8 +275,8 @@ p{
   margin-bottom: 12rem;
 }
 .val p{
-  font-size: 1.5rem;
-  line-height: 2.5rem;
+  /* font-size: 1.5rem; */
+  /* line-height: 2.5rem; */
 }
 .reverse.last{
     margin-bottom: 0;
@@ -440,14 +440,14 @@ p{
   margin-bottom: 21px;
 }
 #missionvision p{
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
   line-height: 2.5rem;
   padding-bottom: 12rem;
   height: 3rem;
   /* background-color: yellow; */
 }
 #missionvision .swipe{
-  box-shadow: 0 2px 1px 1px #888;
+  box-shadow: 0 2px 4px 1px #888;
   border-radius: 20px;
   margin: 23px;
   padding-inline: 24px;
@@ -525,7 +525,7 @@ p{
   color: #fff;
 }
 .sections.footer{
-  padding-block: 96px 64px !important;
+  padding-block: 52px 64px !important;
 }
 iframe{
     display: block;
@@ -535,7 +535,7 @@ iframe{
 .footer .footer-link,
 .footer .footer-contact {
   position: relative;
-  margin-bottom: 45px;
+  margin-bottom: 18px;
   color: #999999;
 }
 
@@ -550,8 +550,7 @@ iframe{
 }
 
 .footer .footer-link a {
-  display: block;
-  margin-bottom: 10px;
+
   color: #fff;
   transition: .3s;
 }
@@ -1243,7 +1242,7 @@ img.big{
 }
 .flex{
   display: flex;
-  gap: 2rem;
+  gap: 0.3rem;
 }
 .careers-flex{
   margin: 0 !important;

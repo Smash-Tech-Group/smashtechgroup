@@ -364,7 +364,7 @@ const TeamDetail = () => {
     <Banner_otherpages title={category.title} image={category.image} />
 
     <div className="sections business-detail" id="whoweare">
-      <h2 className="title-height">{category.title}</h2>
+      <h2 className="title-height text-[32px] font-semibold mb-3">{category.title}</h2>
       {category.description.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
@@ -375,7 +375,10 @@ const TeamDetail = () => {
         </Link>
       )}
 
-      <Link to='/' className="smashtech-button swipe-button"><UilArrowLeft /> Back Home</Link>
+      <div className='w-fit mt-3'>
+      <Link to='/' className="flex items-center smashtech-button swipe-button"><UilArrowLeft /> Back Home</Link>
+      </div>
+
     </div>
 
     </>

@@ -12,8 +12,8 @@ const OurPartners = () => {
   return (
     <>
     <div className="sections partner" id="missionvision">
-      <h2>Our Partners</h2>
-      <p className="partner">A list of our Insurance and Financial Partners</p>
+      <h2 className='text-[32px] mb-5 font-semibold'>Our Partners</h2>
+      {/* <p className="partner">A list of our Insurance and Financial Partners</p> */}
       
       <Swiper 
         spaceBetween={1}

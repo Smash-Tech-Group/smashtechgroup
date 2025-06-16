@@ -9,7 +9,7 @@ const MissionVision = () => {
   return (
     <>
     <div className="sections mission-desktop" id="missionvision">
-      <h2>Mission Statement</h2>
+      <h2 className='text-[32px] font-semibold'>Mission Statement</h2>
 
       <Swiper 
         spaceBetween={1} 
@@ -43,7 +43,7 @@ const MissionVision = () => {
           modules={[Autoplay]}
         >
 
-        <div id="mission-desktop">
+        <div className='text-base' id="mission-desktop">
           <SwiperSlide>
             <Link to="">              
               <div className="swipe">
@@ -112,44 +112,48 @@ const MissionVision = () => {
 
 
       {/* mission - mobile */}
-      <h2 className="missionvision" id="mission-mobile">Mission Statement</h2>
+      <h2 className="missionvision text-[32px] font-semibold" id="mission-mobile">Mission Statement</h2>
 
-      <div id="mission-mobile">
-        <div>
-          <UilCheck className="icon" /> 
-          <p>To provide essential products and services to meet the needs of our clients and deliver superior returns.</p>
-        </div>
-
-        <div>
-          <UilCheck className="icon" /> 
-          <p>To change and improve the lives of our customers by simplifying their daily activities.</p>
-        </div>
-        <div>
-          <UilCheck className="icon" /> 
-          <p>To create a hassle-free home and office environment for our customers through our easy-to-use and easy-to-access services.</p>
-        </div>
-        <div>
-          <UilCheck className="icon" /> 
-          <p>To ensure that optimum results are achieved for our brand and its stakeholders.</p>
-        </div>
-        <div>
-          <UilCheck className="icon" /> 
-          <p>To ensure that the goals and aspirations of our employees are realized.</p>
-        </div>
-        <div>
-          <UilCheck className="icon" /> 
-          <p>To provide first-rate services and on-time delivery to our customers.</p>
-        </div>
-        <div>
-          <UilCheck className="icon" /> 
-          <p>To give our clients the best customer experience.</p>
-        </div>
-      </div>
-
+    <div className='!px-4' id="mission-mobile">
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
+    <p>To provide essential products and services to meet the needs of our clients and deliver superior returns.</p>
+  </div>
+  
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
+    <p>To change and improve the lives of our customers by simplifying their daily activities.</p>
+  </div>
+  
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
+    <p>To create a hassle-free home and office environment for our customers through our easy-to-use and easy-to-access services.</p>
+  </div>
+  
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
+    <p>To ensure that optimum results are achieved for our brand and its stakeholders.</p>
+  </div>
+  
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
+    <p>To ensure that the goals and aspirations of our employees are realized.</p>
+  </div>
+  
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
+    <p>To provide first-rate services and on-time delivery to our customers.</p>
+  </div>
+  
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
+    <p>To give our clients the best customer experience.</p>
+  </div>
+</div>
       {/* Vision */}
 
       <div className="sections mission-desktop" id="missionvision">
-      <h2>Vision Statement</h2>
+      <h2 className='text-[32px] font-semibold'>Vision Statement</h2>
 
       <Swiper 
         spaceBetween={1}
@@ -184,7 +188,7 @@ const MissionVision = () => {
           modules={[Autoplay]}
         >
 
-        <div>
+        <div className='text-base'>
           <SwiperSlide>
             <Link to="">              
               <div className="swipe">
@@ -236,27 +240,27 @@ const MissionVision = () => {
       </div>
 
       {/* vision - mobile */}
-      <h2 className="missionvision" id="mission-mobile">Vision Statement</h2>
+      <h2 className="missionvision text-[32px] font-semibold" id="mission-mobile">Vision Statement</h2>
       <div id="vision-mobile">
-        <div>
-          <UilCheck className="icon" /> 
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
           <p>To remain a company with a motivated, creative, dedicated, and professional human resource.</p>
         </div>
 
-        <div>
-          <UilCheck className="icon" /> 
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
           <p>To become a top-rated innovative company using modern technological infrastructures and tools to better our community.</p>
         </div>
-        <div>
-          <UilCheck className="icon" /> 
+       <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
           <p>To be a globally recognized and impactful brand</p>
         </div>
-        <div>
-          <UilCheck className="icon" /> 
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
           <p>To be our client's best partner through our unrivaled customer service</p>
         </div>
-        <div>
-          <UilCheck className="icon" />
+  <div className='flex items-center !gap-4 mb-3'>
+    <UilCheck className="!h-[2rem] !w-[2rem] flex-shrink-0" /> 
           <p>To be our clients’ most preferred service provider</p> 
         </div>
       </div>

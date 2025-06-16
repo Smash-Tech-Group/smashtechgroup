@@ -381,15 +381,14 @@ const OurTeam = () => {
       slug: 'it_support',
     },
     {
-      title: 'Software Engineer',
+      title: 'Lead Software Engineer',
       description: (() => {
         const fullDescription =
-          `I'm Omogbehinmi Olusegun E. 
+          `My Name is Omogbehinmi Olusegun E., a software engineer with over 3 years of experience turning ideas into powerful, scalable applications that make life easier for users and teams.
 
-          I'm a dedicated software engineer with over 3 years of experience in the tech industry, specializing in developing scalable applications and robust API solutions. My work focuses on building user-centric tools that streamline workflows, boost productivity, and drive innovation.
+I enjoy building tools that cut through complexity—clean APIs, smart systems, and seamless experiences that just work. For me, it's about creating real value with code and pushing boundaries with every project.
 
-          With a strong commitment to delivering high-quality, scalable solutions, I’m continuously honing my technical expertise to stay at the forefront of industry advancements. I’m passionate about using technology to create meaningful impact and to solve real-world problems.
-          `;
+I stay curious, keep learning, and care deeply about writing code that doesn’t just solve problems—but solves the right ones, and solves them well. `;
 
         return fullDescription.slice(0, 118) + (fullDescription.length > 100 ? '...' : '');
       })(),
@@ -427,7 +426,7 @@ const OurTeam = () => {
   return (
     <>
     <div className="sections meetourteam max-screen" id="ourbusiness">
-      <h2>Meet Our Team</h2>
+      <h2 className='text-[32px] font-semibold'>Meet Our Team</h2>
         
       <div className="c2 c2-sm c1-xs">
 
@@ -435,9 +434,9 @@ const OurTeam = () => {
         {team.slice(0, visibleProfiles).map((categ, index) => (
           <div key={index} className="business-container">
             <img src={categ.image} className="team" title="" alt="" />
-            <h3 className="team">{categ.title}</h3>
-            <p>{categ.description}</p>
-            <Link to={`/team/${categ.slug}`}>Read More <UilArrowRight /></Link>
+            <h3 className="text-xl font-semibold">{categ.title}</h3>
+            <p className='text-base !leading-[28px]'>{categ.description}</p>
+            <Link className="flex items-center text-base" to={`/team/${categ.slug}`}>Read More <UilArrowRight /></Link>
           </div>
         ))}
       </div>

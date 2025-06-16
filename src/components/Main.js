@@ -22,7 +22,7 @@ import PressRelease from './pages/Media/PressRelease';
 import BusinessDetail from './__public/__sections/_BusinessDetail';
 import AllBusinesses from './__public/__sections/AllBusinesses';
 import TeamDetail from './__public/__sections/_TeamDetail';
-import Login from './pages/Investment/Login';
+// import Login from './pages/Investment/Login';
 import Dashboard from './pages/Investment/Dashboard';
 import Logout from './pages/Investment/Logout';
 import LiveChatWidget from './__public/__sections/_misc/LiveChatWidget';
@@ -34,6 +34,8 @@ import Corporate_Docs from './pages/About/Corporate_Docs';
 import Agro from './__public/__sections/About/AgricBlog'
 import Gold from './__public/__sections/About/Gold'
 import Onboarding from './__public/__sections/Onboarding'
+import Login from './__public/__sections/login'
+
 
 const Main = () => {
   const company =  'Smash Technology';
@@ -64,13 +66,18 @@ const Main = () => {
       <Route path="/dashboard" element={<Dashboard company={company} />} />
       <Route path="/careers" element={<Careers company={company} />} />
       <Route path="/livechat" element={<LiveChatWidget />} />
+      <Route path="/login" element={<Login />} />
+
       
       {/* Media */}
       <Route path="/blog" element={<Blog company={company} />} />
       <Route path="/faq" element={<Faq company={company} />} />
       <Route path="/press-release" element={<PressRelease company={company} />} />
 
+      {/* Job Application Routes */}
       <Route path="/job-application" element={<JobApplicationForm company={company} />} />
+      <Route path="/job-application/:jobId" element={<JobApplicationForm company={company} />} />
+      
       <Route path="/investor-signup" element={<InvestmentForm company={company} />} />
       <Route path="/send-email" element={<SendEmail company={company} />} />
 
