@@ -377,10 +377,10 @@ const JobApplicationForm = (props) => {
               <p className="text-gray-700">
                 <strong className="text-gray-800">Questions?</strong> Feel free to reach out to our HR team at{' '}
                 <a 
-                  href="mailto:careers@company.com" 
+                  href="mailto:hr@smashtechgroup.com" 
                   className="text-blue-600 hover:text-blue-800 font-medium underline decoration-2 underline-offset-2 hover:decoration-blue-800 transition-colors duration-200"
                 >
-                  careers@company.com
+<strong>hr@smashtechgroup.com</strong>
                 </a>
               </p>
             </div>
@@ -391,13 +391,13 @@ const JobApplicationForm = (props) => {
         <div className="bg-gray-50 px-8 py-6 border-t border-gray-200">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button 
-              className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:from-blue-700 hover:to-blue-800 transform hover:scale-105 transition-all duration-200 whitespace-nowrap"
+              className="w-full sm:w-auto px-8 py-3 bg-[#f34b02] text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-200 whitespace-nowrap"
               onClick={() => navigate('/careers')}
             >
               Browse More Positions
             </button>
             <button 
-              className="w-full sm:w-auto px-8 py-3 bg-white text-gray-700 font-semibold border-2 border-gray-300 rounded-lg hover:bg-gray-50 hover:border-gray-400 transform hover:scale-105 transition-all duration-200 whitespace-nowrap"
+              className="w-full sm:w-auto px-8 py-3 bg-white text-gray-700 font-semibold border-2 border-gray-300 rounded-full hover:bg-gray-50 hover:border-gray-400 transform hover:scale-105 transition-all duration-200 whitespace-nowrap"
               onClick={() => navigate('/')}
             >
               Back to Home

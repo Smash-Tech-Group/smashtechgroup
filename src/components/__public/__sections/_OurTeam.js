@@ -99,7 +99,7 @@ const OurTeam = () => {
     //   slug: 'gm',
     // },
     {
-      title: 'Group Head of Business Operations',
+      title: 'Group Business Manager',
       description: (() => {
         const fullDescription =
           `Meet Claire Aguolu, Group Business OperationsAs the Head of Operations at Smash Technology I’m honored to lead the team that ensures our technology-driven vision is seamlessly brought to life. With a strong passion for operational excellence and a deep understanding of scaling businesses in the tech industry, my role revolves around optimizing processes, fostering innovation, and driving sustainable growth.
@@ -200,7 +200,7 @@ const OurTeam = () => {
       slug: 'head_of_finance',
     },
     {
-      title: 'Group Head, Media & I.T. Communications',
+      title: 'Media & I.T. Communications Manager',
       description: (() => {
         const fullDescription =
           `I am Gracious Onyeahialam and I'm passionate about Cybersecurity. I started my career in 2018 after acquiring a B.Sc in Biotechnology, as a Confidential Secretary to the Director of Health in the Federal Ministry of Science, Technology and Innovation, Abuja overseeing a range of parastatals. During this time, I developed strong analytical, communication, and organizational skills that set the foundation for my future endeavors.
@@ -344,7 +344,7 @@ const OurTeam = () => {
       slug: 'social_media',
     },
     {
-      title: 'Graphic Designer',
+      title: 'Brand Designer',
       description: (() => {
         const fullDescription =
           `My name is Christogonus Chiboka. I am a Certified Brand Identity Designer with a strong passion for creativity. My interest in graphic design started when I discovered CorelDRAW. I enjoyed exploring the software and giving myself tasks to create different designs, which sparked my love for design. 

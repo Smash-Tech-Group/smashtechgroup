@@ -61,12 +61,12 @@ const Main = () => {
       <Route path="/onboarding" element={<Onboarding company={company}/>}   />
       <Route path="/buy-shares-form" element={<BuySharesForm company={company} />} />
       <Route path="/invest-with-us" element={<InvestmentsWithROI company={company} />} />
-      <Route path="/login" element={<Login company={company} />} />
+      {/* <Route path="/login" element={<Login company={company} />} /> */}
       <Route path="/logout" element={<Logout />} />
       <Route path="/dashboard" element={<Dashboard company={company} />} />
       <Route path="/careers" element={<Careers company={company} />} />
       <Route path="/livechat" element={<LiveChatWidget />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/hidden-portal" element={<Login />} />
 
       
       {/* Media */}

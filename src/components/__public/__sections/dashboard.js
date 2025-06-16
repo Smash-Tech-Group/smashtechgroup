@@ -29,7 +29,7 @@ const JobDashboard = () => {
     is_active: true
   });
 
-  const API_BASE = 'http://localhost:8000';
+  const API_BASE = 'https://test-api-v8gp.onrender.com';
 
   // Check if user is authenticated on mount
   useEffect(() => {

@@ -1,8 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { Briefcase, MapPin, Plus, Edit2, Trash2, Users, Eye, LogOut, User, Calendar, DollarSign, Building, Download, ExternalLink, Phone, Mail, Globe, FileText, X, Filter, Search, ChevronDown, Save } from 'lucide-react';
+import logo from '../../../assets/images/logo/smash-logo.png';
 
-const API_BASE = 'http://localhost:8000';
+
+
+const API_BASE = 'https://test-api-v8gp.onrender.com';
 
 const AdminDashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -116,7 +119,7 @@ const AdminDashboard = () => {
         fetchJobs();
         fetchApplications();
       } else {
-        alert('Registration successful! Please login.');
+        // alert('Registration successful! Please login.');
         setShowLogin(true);
       }
       
@@ -168,9 +171,9 @@ const AdminDashboard = () => {
         const data = await response.json();
         setApplications(Array.isArray(data) ? data : []);
       } else if (response.status === 401) {
-        console.log('Authentication required for applications');
+        // console.log('Authentication required for applications');
       } else {
-        console.log('Applications endpoint returned error:', response.status);
+        // console.log('Applications endpoint returned error:', response.status);
         setApplications([]);
       }
     } catch (error) {
@@ -203,7 +206,7 @@ const AdminDashboard = () => {
       
       fetchJobs();
       resetJobForm();
-      alert(editingJob ? 'Job updated successfully!' : 'Job created successfully!');
+      // alert(editingJob ? 'Job updated successfully!' : 'Job created successfully!');
     } catch (error) {
       alert(error.message);
     }
@@ -339,7 +342,7 @@ const AdminDashboard = () => {
       );
       fetchApplications();
       setEditingApplicationStatus(null);
-      alert('Application status updated successfully!');
+      // alert('Application status updated successfully!');
     } catch (error) {
       alert(error.message);
     }
@@ -362,7 +365,7 @@ const AdminDashboard = () => {
           prev.filter(app => app.id !== applicationId)
         );
         fetchApplications();
-        alert('Application deleted successfully!');
+        // alert('Application deleted successfully!');
       } catch (error) {
         alert(error.message);
       }
@@ -496,7 +499,7 @@ const downloadCV = async (application) => {
         downloadUrl = `${API_BASE}/${username}/cv/${application.cv_filename}`;
       }
       
-      console.log(`Trying direct download from: ${downloadUrl}`);
+      // console.log(`Trying direct download from: ${downloadUrl}`);
       response = await fetch(downloadUrl);
     }
     
@@ -538,7 +541,7 @@ const downloadCV = async (application) => {
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
     
-    console.log('CV downloaded successfully');
+    // console.log('CV downloaded successfully');
   } catch (error) {
     console.error('Download error:', error);
     alert(`Error downloading CV: ${error.message}`);
@@ -570,7 +573,7 @@ const CVPreview = ({ application, onClose }) => {
           fileUrl = `${API_BASE}/${username}/cv/${application.cv_filename}`;
         }
         
-        console.log(`Loading CV preview from: ${fileUrl}`);
+        // console.log(`Loading CV preview from: ${fileUrl}`);
         
         const response = await fetch(fileUrl);
         
@@ -780,8 +783,8 @@ const CVPreview = ({ application, onClose }) => {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
         <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
           <div className='flex items-center justify-center mb-6'>
-            <div className='h-16 w-16 bg-blue-600 rounded-lg flex items-center justify-center'>
-              <Briefcase className='h-8 w-8 text-white' />
+            <div className='h-16 w-16 rounded-lg flex items-center justify-center'>
+              <img src={logo} alt=''/>
             </div>
           </div>
           <h1 className="text-2xl font-bold text-center mb-6">
@@ -828,7 +831,7 @@ const CVPreview = ({ application, onClose }) => {
                 onClick={() => setShowLogin(!showLogin)}
                 className="text-blue-600 hover:text-blue-800 text-sm"
               >
-                {showLogin ? 'Need to register?' : 'Already have an account?'}
+                {/* {showLogin ? 'Need to register?' : 'Already have an account?'} */}
               </button>
             </div>
           </div>

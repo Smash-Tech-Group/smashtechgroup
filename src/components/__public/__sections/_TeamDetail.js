@@ -91,9 +91,9 @@ const TeamDetail = () => {
     //   image: gm,
     // },
     grp_biz_operations: {
-      title: 'Group Head of Business Operations',
+      title: 'Group Business Manager',
       description: [
-        `Meet Claire Aguolu, Group Business Operations. As the Head of Operations at Smash Technology I’m honored to lead the team that ensures our technology-driven vision is seamlessly brought to life. With a strong passion for operational excellence and a deep understanding of scaling businesses in the tech industry, my role revolves around optimizing processes, fostering innovation, and driving sustainable growth.`,
+        `Meet Claire Aguolu, Group Business Manager. As the Head of Operations at Smash Technology I’m honored to lead the team that ensures our technology-driven vision is seamlessly brought to life. With a strong passion for operational excellence and a deep understanding of scaling businesses in the tech industry, my role revolves around optimizing processes, fostering innovation, and driving sustainable growth.`,
 
         `My journey to Smash Technology has been an exciting blend of challenges and accomplishments. With over 8 years of experience across specific areas, like the operational strategy, Client Relationship, Supply Chain Management, Sales and Process improvement, I’ve had the privilege of working with diverse teams across the Finance and Hospitality industry. My career began at Wema Bank PlC where I had an impactful role working in the operations department as a Branch Service Associate and later transitioned into the Hospitality industry which solidified my expertise in Operational excellence and Optimization What drew me to Smash Technology was not just its innovative technology but also its commitment to always striving for Excellence, Integrity, Commitment, Innovation and Optimal service delivery.`,
 
@@ -172,7 +172,7 @@ const TeamDetail = () => {
 
 
     grp_head_media_it_communications: {
-      title: 'Group Head, Media & I.T. Communications',
+      title: 'Media & I.T. Communications Manager',
       description: [
         `I am Gracious Onyeahialam and I'm passionate about Cybersecurity. I started my career in 2018 after acquiring a B.Sc in Biotechnology, as a Confidential Secretary to the Director of Health in the Federal Ministry of Science, Technology and Innovation, Abuja overseeing a range of parastatals. During this time, I developed strong analytical, communication, and organizational skills that set the foundation for my future endeavors.`,
 
@@ -294,7 +294,7 @@ const TeamDetail = () => {
       image: vivian,
     },
     graphic_designer: {
-      title: 'Graphic Designer',
+      title: 'Brand Designer',
       description: [
         `I am a Certified Brand Identity Designer with a strong passion for creativity. My interest in graphic design started when I discovered CorelDRAW. I enjoyed exploring the software and giving myself tasks to create different designs, which sparked my love for design.`,
 
