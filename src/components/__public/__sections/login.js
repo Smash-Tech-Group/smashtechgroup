@@ -6,6 +6,8 @@ import logo from '../../../assets/images/logo/smash-logo.png';
 
 
 const API_BASE = 'https://test-api-v8gp.onrender.com';
+// const API_BASE = 'http://127.0.0.1:8000';
+
 
 const AdminDashboard = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -14,6 +16,7 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(false);
   const [showCVPreview, setShowCVPreview] = useState(false);
   const [previewApplication, setPreviewApplication] = useState(null);
+const [showCoverLetterPreview, setShowCoverLetterPreview] = useState(false);
   
   // Options from backend
   const [jobTypes] = useState([
@@ -34,13 +37,7 @@ const AdminDashboard = () => {
     { value: 'Operations', label: 'Operations' },
     { value: 'Other', label: 'Other' }
   ]);
-  const [experienceLevels] = useState([
-    { value: 'Entry Level', label: 'Entry Level' },
-    { value: 'Mid Level', label: 'Mid Level' },
-    { value: 'Senior Level', label: 'Senior Level' },
-    { value: 'Executive', label: 'Executive' }
-  ]);
-  
+
   // Auth states
   const [authForm, setAuthForm] = useState({
     username: '',
@@ -62,12 +59,17 @@ const AdminDashboard = () => {
   const [dateFilter, setDateFilter] = useState('all');
   const [currentJobTitle, setCurrentJobTitle] = useState('');
   const [editingApplicationStatus, setEditingApplicationStatus] = useState(null);
+    const [expandedDescription, setExpandedDescriptions] = useState({});
+    const [expandedRequirements, setExpandedRequirements] = useState({});
+    const [expandedResponsibility, setExpandedResponsibility] = useState({});
+
   const [newStatus, setNewStatus] = useState('');
   
   const [jobForm, setJobForm] = useState({
     title: '',
     description: '',
     requirements: '',
+    responsibility: '',
     location: 'Abuja',
     job_type: 'Full Time',
     salary_range: '',
@@ -183,7 +185,7 @@ const AdminDashboard = () => {
   };
 
   const handleJobSubmit = async () => {
-    if (!jobForm.title || !jobForm.description || !jobForm.requirements) {
+    if (!jobForm.title || !jobForm.description || !jobForm.requirements || !jobForm.responsibility) {
       alert('Please fill in all required fields');
       return;
     }
@@ -212,11 +214,45 @@ const AdminDashboard = () => {
     }
   };
 
+  
+    const toggleDescriptionExpansion = (jobId) => {
+        setExpandedDescriptions(prev => ({
+            ...prev,
+            [jobId]: !prev[jobId]
+        }));
+    };
+
+    const toggleRequirementsExpansion = (jobId) => {
+        setExpandedRequirements(prev => ({
+            ...prev,
+            [jobId]: !prev[jobId]
+        }));
+    };
+
+        const toggleResponsibilityExpansion = (jobId) => {
+        setExpandedResponsibility(prev => ({
+            ...prev,
+            [jobId]: !prev[jobId]
+        }));
+    };
+
+    const truncateText = (text, maxLength = 150) => {
+        if (!text) return '';
+        if (text.length <= maxLength) return text;
+        return text.substring(0, maxLength) + '...';
+    };
+
+    const shouldShowReadMore = (text, maxLength = 150) => {
+        return text && text.length > maxLength;
+    };
+
+
   const resetJobForm = () => {
     setJobForm({
       title: '',
       description: '',
       requirements: '',
+      responsibility: '',
       location: 'Abuja',
       job_type: 'Full Time',
       salary_range: '',
@@ -232,6 +268,7 @@ const AdminDashboard = () => {
       title: job.title || '',
       description: job.description || '',
       requirements: job.requirements || '',
+      responsibility: job.responsibility || '',
       location: job.location || 'Abuja',
       job_type: job.job_type || 'Full Time',
       salary_range: job.salary_range || '',
@@ -372,110 +409,119 @@ const AdminDashboard = () => {
     }
   };
 
-  const openCVPreview = (application) => {
-    setPreviewApplication(application);
-    setShowCVPreview(true);
-  };
 
-  const closeCVPreview = () => {
-    setShowCVPreview(false);
-    setPreviewApplication(null);
-  };
 
-  const generatePDF = (application) => {
-    const printWindow = window.open('', '_blank');
-    const content = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <title>Application - ${application.first_name} ${application.last_name}</title>
-        <style>
-          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-          .header { border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
-          .section { margin-bottom: 25px; }
-          .section h3 { color: #2563eb; border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
-          .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-          .info-item { margin-bottom: 10px; }
-          .label { font-weight: bold; color: #374151; }
-          .status { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
-          .status.pending { background: #fef3c7; color: #92400e; }
-          .status.reviewed { background: #dbeafe; color: #1e40af; }
-          .status.accepted { background: #d1fae5; color: #065f46; }
-          .status.rejected { background: #fee2e2; color: #991b1b; }
-          @media print { body { padding: 0; } }
-        </style>
-      </head>
-      <body>
-        <div class="header">
-          <h1>Job Application</h1>
-          <h2>${currentJobTitle}</h2>
-          <p><strong>Generated:</strong> ${new Date().toLocaleDateString()}</p>
-        </div>
-        
-        <div class="section">
-          <h3>Candidate Information</h3>
-          <div class="info-grid">
-            <div class="info-item">
-              <span class="label">Name:</span> ${application.first_name} ${application.middle_name || ''} ${application.last_name}
-            </div>
-            <div class="info-item">
-              <span class="label">Email:</span> ${application.email}
-            </div>
-            <div class="info-item">
-              <span class="label">Phone:</span> ${application.phone}
-            </div>
-            <div class="info-item">
-              <span class="label">Date of Birth:</span> ${new Date(application.dob).toLocaleDateString()}
-            </div>
-            <div class="info-item">
-              <span class="label">State of Origin:</span> ${application.state_of_origin}
-            </div>
-            <div class="info-item">
-              <span class="label">Experience:</span> ${application.experience}
-            </div>
-          </div>
-        </div>
+  // Enhanced functions to handle both CV and Cover Letter files
 
-        <div class="section">
-          <h3>Contact Details</h3>
+const openCVPreview = (application) => {
+  setPreviewApplication(application);
+  setShowCVPreview(true);
+};
+
+const closeCVPreview = () => {
+  setShowCVPreview(false);
+  setPreviewApplication(null);
+};
+
+const openCoverLetterPreview = (application) => {
+  setPreviewApplication(application);
+  setShowCoverLetterPreview(true);
+};
+
+const closeCoverLetterPreview = () => {
+  setShowCoverLetterPreview(false);
+  setPreviewApplication(null);
+};
+
+const generatePDF = (application) => {
+  const printWindow = window.open('', '_blank');
+  const content = `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Application - ${application.first_name} ${application.last_name}</title>
+      <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .section { margin-bottom: 25px; }
+        .section h3 { color: #2563eb; border-bottom: 1px solid #e5e7eb; padding-bottom: 5px; }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .info-item { margin-bottom: 10px; }
+        .label { font-weight: bold; color: #374151; }
+        .status { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .status.pending { background: #fef3c7; color: #92400e; }
+        .status.reviewed { background: #dbeafe; color: #1e40af; }
+        .status.accepted { background: #d1fae5; color: #065f46; }
+        .status.rejected { background: #fee2e2; color: #991b1b; }
+        @media print { body { padding: 0; } }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <h1>Job Application</h1>
+        <h2>${currentJobTitle}</h2>
+        <p><strong>Generated:</strong> ${new Date().toLocaleDateString()}</p>
+      </div>
+      
+      <div class="section">
+        <h3>Candidate Information</h3>
+        <div class="info-grid">
           <div class="info-item">
-            <span class="label">Address:</span> ${application.address}
-          </div>
-          ${application.portfolio ? `<div class="info-item"><span class="label">Portfolio:</span> ${application.portfolio}</div>` : ''}
-          ${application.social_link ? `<div class="info-item"><span class="label">Social Link:</span> ${application.social_link}</div>` : ''}
-        </div>
-
-        <div class="section">
-          <h3>Application Details</h3>
-          <div class="info-item">
-            <span class="label">Applied Date:</span> ${new Date(application.applied_at).toLocaleDateString()}
+            <span class="label">Name:</span> ${application.first_name} ${application.middle_name || ''} ${application.last_name}
           </div>
           <div class="info-item">
-            <span class="label">Status:</span> <span class="status ${application.status?.toLowerCase() || 'pending'}">${application.status || 'Pending'}</span>
+            <span class="label">Email:</span> ${application.email}
           </div>
-          ${application.cv_filename ? `<div class="info-item"><span class="label">CV:</span> ${application.cv_filename}</div>` : ''}
+          <div class="info-item">
+            <span class="label">Phone:</span> ${application.phone}
+          </div>
+          <div class="info-item">
+            <span class="label">Date of Birth:</span> ${new Date(application.dob).toLocaleDateString()}
+          </div>
+          <div class="info-item">
+            <span class="label">State of Origin:</span> ${application.state_of_origin}
+          </div>
         </div>
+      </div>
 
-        <div class="section">
-          <h3>Cover Letter</h3>
-          <p>${application.cover_letter || 'No cover letter provided'}</p>
+      <div class="section">
+        <h3>Contact Details</h3>
+        <div class="info-item">
+          <span class="label">Address:</span> ${application.address}
         </div>
-      </body>
-      </html>
-    `;
-    
-    printWindow.document.write(content);
-    printWindow.document.close();
-    printWindow.focus();
-    setTimeout(() => {
-      printWindow.print();
-    }, 250);
-  };
+        ${application.portfolio ? `<div class="info-item"><span class="label">Portfolio:</span> ${application.portfolio}</div>` : ''}
+        ${application.social_link ? `<div class="info-item"><span class="label">Social Link:</span> ${application.social_link}</div>` : ''}
+      </div>
 
-// Updated CV download function that works with your backend
-// Replace your existing downloadCV and CVPreview functions with these improved versions
+      <div class="section">
+        <h3>Application Details</h3>
+        <div class="info-item">
+          <span class="label">Applied Date:</span> ${new Date(application.applied_at).toLocaleDateString()}
+        </div>
+        <div class="info-item">
+          <span class="label">Status:</span> <span class="status ${application.status?.toLowerCase() || 'pending'}">${application.status || 'Pending'}</span>
+        </div>
+        ${application.cv_filename ? `<div class="info-item"><span class="label">CV:</span> ${application.cv_filename}</div>` : ''}
+        ${application.cover_letter ? `<div class="info-item"><span class="label">Cover Letter:</span> ${application.cover_letter}</div>` : ''}
+      </div>
 
-// Updated CV download function with fallback to the new endpoint
+      <div class="section">
+        <h3>Cover Letter</h3>
+        <p>${application.cover_letter || 'No cover letter provided'}</p>
+      </div>
+    </body>
+    </html>
+  `;
+  
+  printWindow.document.write(content);
+  printWindow.document.close();
+  printWindow.focus();
+  setTimeout(() => {
+    printWindow.print();
+  }, 250);
+};
+
+// Enhanced CV download function
 const downloadCV = async (application) => {
   if (!application.cv_filename) {
     alert('No CV file available for this application');
@@ -499,7 +545,6 @@ const downloadCV = async (application) => {
         downloadUrl = `${API_BASE}/${username}/cv/${application.cv_filename}`;
       }
       
-      // console.log(`Trying direct download from: ${downloadUrl}`);
       response = await fetch(downloadUrl);
     }
     
@@ -523,7 +568,6 @@ const downloadCV = async (application) => {
         filename = filenameMatch[1].replace(/['"]/g, '');
       }
     } else if (application.cv_filename) {
-      // Extract filename from stored CV filename
       if (application.cv_filename.includes('/')) {
         filename = application.cv_filename.split('/').pop();
       } else {
@@ -541,14 +585,101 @@ const downloadCV = async (application) => {
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
     
-    // console.log('CV downloaded successfully');
   } catch (error) {
     console.error('Download error:', error);
     alert(`Error downloading CV: ${error.message}`);
   }
 };
 
-// Updated CV Preview component with better error handling
+// New Cover Letter download function
+const downloadCoverLetter = async (application) => {
+  if (!application.cover_letter) {
+    alert('No cover letter file available for this application');
+    return;
+  }
+  
+  // Check if cover_letter is just text content or a filename
+  if (application.cover_letter.length < 255 && !application.cover_letter.includes('.')) {
+    // It's likely just text content, create a text file
+    const blob = new Blob([application.cover_letter], { type: 'text/plain' });
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = `${application.first_name}_${application.last_name}_CoverLetter.txt`;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+    return;
+  }
+  
+  try {
+    // First try the dedicated download endpoint
+    let response = await fetch(`${API_BASE}/applications/${application.id}/download-cover-letter`, {
+      headers: getAuthHeaders()
+    });
+    
+    // If that fails, try the direct file endpoint
+    if (!response.ok) {
+      let downloadUrl;
+      
+      if (application.cover_letter.startsWith('http')) {
+        downloadUrl = application.cover_letter;
+      } else {
+        const username = application.email.split('@')[0];
+        downloadUrl = `${API_BASE}/${username}/cover_letter/${application.cover_letter}`;
+      }
+      
+      response = await fetch(downloadUrl);
+    }
+    
+    if (!response.ok) {
+      throw new Error(`Failed to download cover letter. Server responded with status: ${response.status}`);
+    }
+    
+    const blob = await response.blob();
+    
+    if (blob.size === 0) {
+      throw new Error('Downloaded file is empty');
+    }
+    
+    // Get filename from response headers or use default
+    let filename = `${application.first_name}_${application.last_name}_CoverLetter`;
+    
+    const contentDisposition = response.headers.get('content-disposition');
+    if (contentDisposition) {
+      const filenameMatch = contentDisposition.match(/filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/);
+      if (filenameMatch && filenameMatch[1]) {
+        filename = filenameMatch[1].replace(/['"]/g, '');
+      }
+    } else if (application.cover_letter) {
+      if (application.cover_letter.includes('/')) {
+        filename = application.cover_letter.split('/').pop();
+      } else {
+        filename = application.cover_letter;
+      }
+    }
+    
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    document.body.removeChild(a);
+    
+  } catch (error) {
+    console.error('Download error:', error);
+    alert(`Error downloading cover letter: ${error.message}`);
+  }
+};
+
+
+
+// Enhanced CV Preview component
 const CVPreview = ({ application, onClose }) => {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -563,7 +694,6 @@ const CVPreview = ({ application, onClose }) => {
       }
 
       try {
-        // Parse the CV filename/URL to get the correct endpoint
         let fileUrl;
         
         if (application.cv_filename.startsWith('http')) {
@@ -572,8 +702,6 @@ const CVPreview = ({ application, onClose }) => {
           const username = application.email.split('@')[0];
           fileUrl = `${API_BASE}/${username}/cv/${application.cv_filename}`;
         }
-        
-        // console.log(`Loading CV preview from: ${fileUrl}`);
         
         const response = await fetch(fileUrl);
         
@@ -608,7 +736,6 @@ const CVPreview = ({ application, onClose }) => {
 
   const getFileType = (filename) => {
     if (!filename) return '';
-    
     const actualFilename = filename.includes('/') ? filename.split('/').pop() : filename;
     return actualFilename.split('.').pop()?.toLowerCase();
   };
@@ -668,9 +795,6 @@ const CVPreview = ({ application, onClose }) => {
                 <div className="text-sm text-gray-600 mb-4">
                   The CV file might not be accessible or the file path might be incorrect.
                 </div>
-                <div className="bg-gray-50 p-3 rounded-lg mb-4 text-xs text-gray-600">
-                  <strong>Stored CV path:</strong> {application.cv_filename}
-                </div>
                 <button
                   onClick={() => downloadCV(application)}
                   className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded flex items-center gap-2 mx-auto transition-colors"
@@ -716,6 +840,207 @@ const CVPreview = ({ application, onClose }) => {
                     </div>
                     <button
                       onClick={() => downloadCV(application)}
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded flex items-center gap-2 mx-auto transition-colors"
+                    >
+                      <Download size={16} />
+                      Download to View
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// New Cover Letter Preview component
+const CoverLetterPreview = ({ application, onClose }) => {
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isTextContent, setIsTextContent] = useState(false);
+
+  useEffect(() => {
+    const loadPreview = async () => {
+      if (!application.cover_letter) {
+        setError('No cover letter available');
+        setLoading(false);
+        return;
+      }
+
+      // Check if cover_letter is just text content or a filename
+      if (application.cover_letter.length < 255 && !application.cover_letter.includes('.')) {
+        setIsTextContent(true);
+        setLoading(false);
+        return;
+      }
+
+      try {
+        let fileUrl;
+        
+        if (application.cover_letter.startsWith('http')) {
+          fileUrl = application.cover_letter;
+        } else {
+          const username = application.email.split('@')[0];
+          fileUrl = `${API_BASE}/${username}/cover_letter/${application.cover_letter}`;
+        }
+        
+        const response = await fetch(fileUrl);
+        
+        if (!response.ok) {
+          throw new Error(`Failed to load cover letter preview. Status: ${response.status}`);
+        }
+        
+        const blob = await response.blob();
+        
+        if (blob.size === 0) {
+          throw new Error('Cover letter file is empty or corrupted');
+        }
+        
+        const url = window.URL.createObjectURL(blob);
+        setPreviewUrl(url);
+      } catch (error) {
+        console.error('Cover letter preview error:', error);
+        setError(`Error loading cover letter: ${error.message}`);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPreview();
+
+    return () => {
+      if (previewUrl) {
+        window.URL.revokeObjectURL(previewUrl);
+      }
+    };
+  }, [application]);
+
+  const getFileType = (filename) => {
+    if (!filename) return '';
+    const actualFilename = filename.includes('/') ? filename.split('/').pop() : filename;
+    return actualFilename.split('.').pop()?.toLowerCase();
+  };
+
+  const getDisplayFilename = (filename) => {
+    if (!filename) return 'Cover Letter';
+    return filename.includes('/') ? filename.split('/').pop() : filename;
+  };
+
+  const fileType = getFileType(application.cover_letter);
+  const displayFilename = getDisplayFilename(application.cover_letter);
+  const isPdf = fileType === 'pdf';
+  const isDoc = ['doc', 'docx'].includes(fileType);
+  const isText = fileType === 'txt' || isTextContent;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+        <div className="p-4 border-b border-gray-200 flex justify-between items-center">
+          <h3 className="text-lg font-semibold">
+            Cover Letter Preview - {application.first_name} {application.last_name}
+            {!isTextContent && (
+              <span className="text-sm text-gray-500 ml-2">
+                ({displayFilename})
+              </span>
+            )}
+          </h3>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => downloadCoverLetter(application)}
+              className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm flex items-center gap-1 transition-colors"
+            >
+              <Download size={14} />
+              Download
+            </button>
+            <button
+              onClick={onClose}
+              className="text-gray-500 hover:text-gray-700 p-1 rounded transition-colors"
+            >
+              <X size={20} />
+            </button>
+          </div>
+        </div>
+        
+        <div className="p-4" style={{ height: 'calc(90vh - 100px)' }}>
+          {loading && (
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+                <div className="text-gray-500">Loading cover letter preview...</div>
+              </div>
+            </div>
+          )}
+          
+          {error && (
+            <div className="flex items-center justify-center h-full">
+              <div className="text-center max-w-md">
+                <FileText size={48} className="text-red-400 mx-auto mb-3" />
+                <div className="text-red-600 mb-2 font-medium">{error}</div>
+                <div className="text-sm text-gray-600 mb-4">
+                  The cover letter file might not be accessible or the file path might be incorrect.
+                </div>
+                <button
+                  onClick={() => downloadCoverLetter(application)}
+                  className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded flex items-center gap-2 mx-auto transition-colors"
+                >
+                  <Download size={16} />
+                  Try Download Instead
+                </button>
+              </div>
+            </div>
+          )}
+          
+          {isTextContent && !loading && !error && (
+            <div className="h-full overflow-y-auto">
+              <div className="bg-gray-50 p-6 rounded-lg h-full">
+                <h4 className="font-semibold mb-4 text-gray-800">Cover Letter Content:</h4>
+                <div className="text-gray-700 leading-relaxed whitespace-pre-wrap">
+                  {application.cover_letter}
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {previewUrl && !loading && !error && !isTextContent && (
+            <>
+              {isPdf && (
+                <iframe
+                  src={previewUrl}
+                  className="w-full h-full border-0 shadow-lg rounded-lg"
+                  title="Cover Letter Preview"
+                  onError={() => setError('Failed to display PDF')}
+                />
+              )}
+              
+              {isText && (
+                <div className="h-full overflow-y-auto">
+                  <div className="bg-gray-50 p-6 rounded-lg h-full">
+                    <iframe
+                      src={previewUrl}
+                      className="w-full h-full border-0"
+                      title="Cover Letter Preview"
+                      onError={() => setError('Failed to display text file')}
+                    />
+                  </div>
+                </div>
+              )}
+              
+              {isDoc && (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-center">
+                    <FileText size={48} className="text-gray-400 mx-auto mb-2" />
+                    <div className="text-gray-600 mb-4">
+                      Preview not available for {fileType?.toUpperCase()} files
+                    </div>
+                    <div className="text-sm text-gray-500 mb-4">
+                      Microsoft Word documents require download to view
+                    </div>
+                    <button
+                      onClick={() => downloadCoverLetter(application)}
                       className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded flex items-center gap-2 mx-auto transition-colors"
                     >
                       <Download size={16} />
@@ -783,8 +1108,8 @@ const CVPreview = ({ application, onClose }) => {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
         <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
           <div className='flex items-center justify-center mb-6'>
-            <div className='h-16 w-16 rounded-lg flex items-center justify-center'>
-              <img src={logo} alt=''/>
+            <div className='h-14 w-14 md:h-16 md:w-16 rounded-lg flex items-center justify-center'>
+              <img src={logo} className="logos" alt=''/>
             </div>
           </div>
           <h1 className="text-2xl font-bold text-center mb-6">
@@ -845,8 +1170,8 @@ const CVPreview = ({ application, onClose }) => {
     <div className="min-h-screen bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <div className="flex justify-between items-center">
+        <div className="flex bg-white rounded-lg shadow-sm p-6 mb-6">
+          <div className="flex flex-wrap w-full justify-between items-center">
             <div>
               <h1 className="text-3xl font-bold text-gray-900">Job Management Dashboard</h1>
               <p className="text-gray-600 mt-2">Manage job postings and track applications</p>
@@ -891,94 +1216,177 @@ const CVPreview = ({ application, onClose }) => {
               </button>
             </div>
 
-            <div className="grid gap-6">
-              {jobs.map((job) => (
-                <div key={job.id} className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
-                        <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
-                          {job.job_type}
-                        </span>
-                        {job.is_active ? (
-                          <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
-                            Active
-                          </span>
-                        ) : (
-                          <span className="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">
-                            Closed
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-4 text-gray-600 mb-2">
-                        <span className="flex items-center gap-1">
-                          <MapPin size={16} />
-                          {job.location}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <DollarSign size={16} />
-                          {formatSalary(job)}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-4 text-sm text-gray-500">
-                        {job.application_deadline && (
-                          <span className="flex items-center gap-1">
-                            <Calendar size={14} />
-                            Deadline: {new Date(job.application_deadline).toLocaleDateString()}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => viewJobApplications(job.id)}
-                        className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
-                        title="View Applications"
-                      >
-                        <Eye size={18} />
-                      </button>
-                      <button
-                        onClick={() => handleEditJob(job)}
-                        className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                        title="Edit Job"
-                      >
-                        <Edit2 size={18} />
-                      </button>
-                      <button
-                        onClick={() => handleDeleteJob(job.id)}
-                        className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                        title="Delete Job"
-                      >
-                        <Trash2 size={18} />
-                      </button>
-                    </div>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">Description:</h4>
-                    <p className="text-gray-700">{job.description}</p>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">Requirements:</h4>
-                    <p className="text-gray-700">{job.requirements}</p>
-                  </div>
+           <div className="grid gap-6">
+  {jobs.map((job) => (
+    <div key={job.id} className="bg-white rounded-lg shadow-sm p-6 border border-gray-200">
+      <div className="flex justify-between items-start mb-4">
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-2">
+            <h3 className="text-xl font-semibold text-gray-900">{job.title}</h3>
+            <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+              {job.job_type}
+            </span>
+            {job.is_active ? (
+              <span className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
+                Active
+              </span>
+            ) : (
+              <span className="px-2 py-1 bg-red-100 text-red-800 text-xs rounded-full">
+                Closed
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-4 text-gray-600 mb-2">
+            <span className="flex items-center gap-1">
+              <MapPin size={16} />
+              {job.location}
+            </span>
+            <span className="flex items-center gap-1">
+              <DollarSign size={16} />
+              {formatSalary(job)}
+            </span>
+          </div>
+          <div className="flex items-center gap-4 text-sm text-gray-500">
+            {job.application_deadline && (
+              <span className="flex items-center gap-1">
+                <Calendar size={14} />
+                Deadline: {new Date(job.application_deadline).toLocaleDateString()}
+              </span>
+            )}
+          </div>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={() => viewJobApplications(job.id)}
+            className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+            title="View Applications"
+          >
+            <Eye size={18} />
+          </button>
+          <button
+            onClick={() => handleEditJob(job)}
+            className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+            title="Edit Job"
+          >
+            <Edit2 size={18} />
+          </button>
+          <button
+            onClick={() => handleDeleteJob(job.id)}
+            className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+            title="Delete Job"
+          >
+            <Trash2 size={18} />
+          </button>
+        </div>
+      </div>
+      
+      {job.description && (
+        <div className="mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">Description:</h4>
+          <div>
+            {expandedDescription[job.id] ? (
+              <div 
+                className="text-gray-700"
+                dangerouslySetInnerHTML={{ 
+                  __html: job.description.replace(/\n/g, '<br>') 
+                }} 
+              />
+            ) : (
+              <div 
+                className="text-gray-700"
+                dangerouslySetInnerHTML={{ 
+                  __html: truncateText(job.description).replace(/\n/g, '<br>') 
+                }} 
+              />
+            )}
+          </div>
+          {shouldShowReadMore(job.description) && (
+            <button
+              onClick={() => toggleDescriptionExpansion(job.id)}
+              className="text-blue-600 hover:text-blue-800 text-sm mt-1 font-medium"
+            >
+              {expandedDescription[job.id] ? 'Read Less' : 'Read More'}
+            </button>
+          )}
+        </div>
+      )}
 
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-gray-500">
-                      Posted: {new Date(job.created_at).toLocaleDateString()}
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <Users size={16} className="text-gray-400" />
-                      <span className="text-sm font-medium text-gray-700">
-                        {getApplicationCount(job.id)} Applications
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+      {job.responsibility && (
+        <div className="mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">Responsibilities:</h4>
+          <div>
+            {expandedResponsibility[job.id] ? (
+              <div 
+                className="text-gray-700"
+                dangerouslySetInnerHTML={{ 
+                  __html: job.responsibility.replace(/\n/g, '<br>') 
+                }} 
+              />
+            ) : (
+              <div 
+                className="text-gray-700"
+                dangerouslySetInnerHTML={{ 
+                  __html: truncateText(job.responsibility).replace(/\n/g, '<br>') 
+                }} 
+              />
+            )}
+          </div>
+          {shouldShowReadMore(job.responsibility) && (
+            <button
+              onClick={() => toggleResponsibilityExpansion(job.id)}
+              className="text-blue-600 hover:text-blue-800 text-sm mt-1 font-medium"
+            >
+              {expandedResponsibility[job.id] ? 'Read Less' : 'Read More'}
+            </button>
+          )}
+        </div>
+      )}
+      
+      {job.requirements && (
+        <div className="mb-4">
+          <h4 className="font-semibold text-gray-900 mb-2">Requirements:</h4>
+          <div>
+            {expandedRequirements[job.id] ? (
+              <div 
+                className="text-gray-700"
+                dangerouslySetInnerHTML={{ 
+                  __html: job.requirements.replace(/\n/g, '<br>') 
+                }} 
+              />
+            ) : (
+              <div 
+                className="text-gray-700"
+                dangerouslySetInnerHTML={{ 
+                  __html: truncateText(job.requirements).replace(/\n/g, '<br>') 
+                }} 
+              />
+            )}
+          </div>
+          {shouldShowReadMore(job.requirements) && (
+            <button
+              onClick={() => toggleRequirementsExpansion(job.id)}
+              className="text-blue-600 hover:text-blue-800 text-sm mt-1 font-medium"
+            >
+              {expandedRequirements[job.id] ? 'Read Less' : 'Read More'}
+            </button>
+          )}
+        </div>
+      )}
+
+      <div className="flex justify-between items-center">
+        <span className="text-sm text-gray-500">
+          Posted: {new Date(job.created_at).toLocaleDateString()}
+        </span>
+        <div className="flex items-center gap-2">
+          <Users size={16} className="text-gray-400" />
+          <span className="text-sm font-medium text-gray-700">
+            {getApplicationCount(job.id)} Applications
+          </span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
           </>
         )}
 
@@ -1076,9 +1484,25 @@ const CVPreview = ({ application, onClose }) => {
                   value={jobForm.description}
                   onChange={(e) => setJobForm({...jobForm, description: e.target.value})}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Describe the role and responsibilities..."
+                  placeholder="Describe the role..."
                 />
               </div>
+
+
+   <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Responsibilities *
+                </label>
+                <textarea
+                  required
+                  rows={4}
+                  value={jobForm.responsibility}
+                  onChange={(e) => setJobForm({...jobForm, responsibility: e.target.value})}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Describe the responsibilities..."
+                />
+              </div>
+
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -1196,7 +1620,6 @@ const CVPreview = ({ application, onClose }) => {
                       <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Name</th>
                       <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Email</th>
                       <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Phone</th>
-                      <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Experience</th>
                       <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Status</th>
                       <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Applied Date</th>
                       <th className="border border-gray-200 px-4 py-3 text-left text-sm font-medium text-gray-900">Actions</th>
@@ -1214,9 +1637,7 @@ const CVPreview = ({ application, onClose }) => {
                         <td className="border border-gray-200 px-4 py-3 text-sm text-gray-900">
                           {application.phone}
                         </td>
-                        <td className="border border-gray-200 px-4 py-3 text-sm text-gray-900">
-                          {application.experience}
-                        </td>
+         
                         <td className="border border-gray-200 px-4 py-3 text-sm">
                           {editingApplicationStatus === application.id ? (
                             <div className="flex items-center gap-2">
@@ -1341,10 +1762,6 @@ const CVPreview = ({ application, onClose }) => {
                           <span className="font-medium text-gray-600">State of Origin:</span>
                           <span className="text-gray-900">{selectedApplication.state_of_origin}</span>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="font-medium text-gray-600">Experience:</span>
-                          <span className="text-gray-900">{selectedApplication.experience}</span>
-                        </div>
                       </div>
                     </div>
 
@@ -1424,7 +1841,7 @@ const CVPreview = ({ application, onClose }) => {
        {selectedApplication.cv_filename && (
   <div>
     <div className="flex justify-between items-center">
-      <span className="font-medium text-gray-600">CV File:</span>
+      <span className="font-medium text-gray-600 mt-2">CV File:</span>
       <div className="flex items-center gap-2">
         {/* <span className="text-gray-900 flex items-center gap-1">
           {(selectedApplication.cv_filename)}
@@ -1460,17 +1877,45 @@ const CVPreview = ({ application, onClose }) => {
                       </div>
                     </div>
 
-                    {selectedApplication.cover_letter && (
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Cover Letter</h3>
-                        <div className="bg-gray-50 p-4 rounded-lg">
-                          <p className="text-gray-700 text-sm leading-relaxed">
-                            {selectedApplication.cover_letter}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                    
+{selectedApplication.cover_letter && (
+  <div className='flex items-center justify-between'>
+    <h3 className="font-medium text-gray-600">Cover Letter</h3>
+    <div className="">
+      <div className="flex justify-between items-center">
+        {/* <p className="text-gray-700 text-sm leading-relaxed flex-1 mr-4">
+          {selectedApplication.cover_letter.substring(0, 200)}...
+        </p> */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => openCoverLetterPreview(selectedApplication)}
+            className="text-blue-600 hover:text-blue-800 text-xs flex items-center gap-1"
+            title="View Cover Letter"
+          >
+            <Eye size={12} />
+            View
+          </button>
+          <button
+            onClick={() => downloadCoverLetter(selectedApplication)}
+            className="text-green-600 hover:text-green-800 text-xs flex items-center gap-1"
+            title="Download Cover Letter"
+          >
+            <Download size={12} />
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+{showCoverLetterPreview && previewApplication && (
+  <CoverLetterPreview
+    application={previewApplication}
+    onClose={closeCoverLetterPreview}
+  />
+)}
+         </div>
                 </div>
 
                 <div className="flex justify-end gap-3 mt-6 pt-6 border-t border-gray-200">

@@ -18,6 +18,15 @@ const JobApplicationForm = (props) => {
     const [uploadProgress, setUploadProgress] = useState(0);
     const [showSuccess, setShowSuccess] = useState(false);
 
+    // Nigerian states list
+    const nigerianStates = [
+        'Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno',
+        'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Ekiti', 'Enugu', 'FCT', 'Gombe', 'Imo',
+        'Jigawa', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Lagos', 'Nasarawa',
+        'Niger', 'Ogun', 'Ondo', 'Osun', 'Oyo', 'Plateau', 'Rivers', 'Sokoto', 'Taraba',
+        'Yobe', 'Zamfara'
+    ];
+
     const [formData, setFormData] = useState({
         first_name: '',
         middle_name: '',
@@ -29,8 +38,8 @@ const JobApplicationForm = (props) => {
         phone: '',
         portfolio: '',
         social_link: '',
-        experience: '',
-        cover_letter: '',
+        state_of_resident: '',
+        cover_letter: null,
         cv_file: null
     });
 
@@ -73,48 +82,63 @@ const JobApplicationForm = (props) => {
     };
 
     const handleFileChange = (e) => {
+        const { name } = e.target;
         const file = e.target.files[0];
+        
         if (file) {
-            // Validate file type (PDF, DOC, DOCX)
-            const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
-            if (!allowedTypes.includes(file.type)) {
-                setErrors(prev => ({
-                    ...prev,
-                    cv_file: 'Please upload a PDF, DOC, or DOCX file'
-                }));
-                return;
+            // Different validation for different file types
+            if (name === 'cv_file') {
+                // CV file validation (PDF, DOC, DOCX)
+                const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                if (!allowedTypes.includes(file.type)) {
+                    setErrors(prev => ({
+                        ...prev,
+                        [name]: 'Please upload a PDF, DOC, or DOCX file'
+                    }));
+                    return;
+                }
+            } else if (name === 'cover_letter') {
+                // Cover letter validation (PDF, DOC, DOCX, TXT)
+                const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'text/plain'];
+                if (!allowedTypes.includes(file.type)) {
+                    setErrors(prev => ({
+                        ...prev,
+                        [name]: 'Please upload a PDF, DOC, DOCX, or TXT file'
+                    }));
+                    return;
+                }
             }
             
             // Validate file size (max 5MB)
             if (file.size > 5 * 1024 * 1024) {
                 setErrors(prev => ({
                     ...prev,
-                    cv_file: 'File size must be less than 5MB'
+                    [name]: 'File size must be less than 5MB'
                 }));
                 return;
             }
             
             setFormData(prev => ({
                 ...prev,
-                cv_file: file
+                [name]: file
             }));
             
-            if (errors.cv_file) {
+            if (errors[name]) {
                 setErrors(prev => ({
                     ...prev,
-                    cv_file: ''
+                    [name]: ''
                 }));
             }
         }
     };
 
-    const removeFile = () => {
+    const removeFile = (fieldName) => {
         setFormData(prev => ({
             ...prev,
-            cv_file: null
+            [fieldName]: null
         }));
         // Clear the file input
-        const fileInput = document.getElementById('cv_file');
+        const fileInput = document.getElementById(fieldName);
         if (fileInput) {
             fileInput.value = '';
         }
@@ -126,7 +150,7 @@ const JobApplicationForm = (props) => {
         // Required fields validation
         const requiredFields = [
             'first_name', 'last_name', 'dob', 'state_of_origin', 
-            'address', 'email', 'phone', 'social_link', 'experience', 'cover_letter'
+            'address', 'email', 'phone', 'social_link', 'state_of_resident'
         ];
         
         requiredFields.forEach(field => {
@@ -146,14 +170,15 @@ const JobApplicationForm = (props) => {
         }
         
         // URL validation for social link and portfolio
-        const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
-        if (formData.social_link && !urlPattern.test(formData.social_link)) {
-            newErrors.social_link = 'Please enter a valid URL';
-        }
-        
-        if (formData.portfolio && !urlPattern.test(formData.portfolio)) {
-            newErrors.portfolio = 'Please enter a valid URL';
-        }
+    // URL validation for social link and portfolio
+const urlPattern = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+if (formData.social_link && !urlPattern.test(formData.social_link)) {
+    newErrors.social_link = 'Please enter a valid URL';
+}
+
+if (formData.portfolio && formData.portfolio.trim() !== '' && !urlPattern.test(formData.portfolio)) {
+    newErrors.portfolio = 'Please enter a valid URL';
+}
         
         // CV file validation
         if (!formData.cv_file) {
@@ -177,14 +202,18 @@ const JobApplicationForm = (props) => {
         try {
             const submitData = new FormData();
             
-            // Append all form data
-            Object.keys(formData).forEach(key => {
-                if (key === 'cv_file' && formData[key]) {
-                    submitData.append('cv_file', formData[key]);
-                } else if (key !== 'cv_file') {
-                    submitData.append(key, formData[key]);
-                }
-            });
+// Append all form data
+Object.keys(formData).forEach(key => {
+    if (key === 'cv_file' && formData[key]) {
+        submitData.append(key, formData[key]);
+    } else if (key === 'cover_letter' && formData[key]) {
+        submitData.append('cover_letter_file', formData[key]);
+    } else if (key !== 'cv_file' && key !== 'cover_letter') {
+        // Send empty string instead of null for optional fields
+        const value = formData[key] || '';
+        submitData.append(key, value);
+    }
+});
             
             const response = await axios.post(
                 `${baseUrl}/jobs/${jobId}/apply`,
@@ -205,14 +234,28 @@ const JobApplicationForm = (props) => {
             if (response.status === 201 || response.status === 200) {
                 setShowSuccess(true);
             }
-        } catch (error) {
-            console.error('Error submitting application:', error);
-            if (error.response?.data?.detail) {
-                setError(error.response.data.detail);
-            } else {
-                setError('Failed to submit application. Please try again.');
-            }
-        } finally {
+        }  catch (error) {
+    console.error('Error submitting application:', error);
+    if (error.response?.data?.detail) {
+        // Handle different types of error responses
+        const errorDetail = error.response.data.detail;
+        if (typeof errorDetail === 'string') {
+            setError(errorDetail);
+        } else if (Array.isArray(errorDetail)) {
+            // Handle validation errors array
+            const errorMessages = errorDetail.map(err => 
+                typeof err === 'string' ? err : err.msg || 'Validation error'
+            ).join(', ');
+            setError(errorMessages);
+        } else if (typeof errorDetail === 'object' && errorDetail.msg) {
+            setError(errorDetail.msg);
+        } else {
+            setError('Failed to submit application. Please check your inputs.');
+        }
+    } else {
+        setError('Failed to submit application. Please try again.');
+    }
+} finally {
             setSubmitting(false);
             setUploadProgress(0);
         }
@@ -380,7 +423,7 @@ const JobApplicationForm = (props) => {
                   href="mailto:hr@smashtechgroup.com" 
                   className="text-blue-600 hover:text-blue-800 font-medium underline decoration-2 underline-offset-2 hover:decoration-blue-800 transition-colors duration-200"
                 >
-<strong>hr@smashtechgroup.com</strong>
+                  <strong>hr@smashtechgroup.com</strong>
                 </a>
               </p>
             </div>
@@ -439,12 +482,12 @@ const JobApplicationForm = (props) => {
                     </div>
                 )}
 
-                {error && (
-                    <div className="tech-alert tech-alert-error">
-                        <X size={20} />
-                        <span>{error}</span>
-                    </div>
-                )}
+              {error && (
+    <div className="tech-alert tech-alert-error">
+        <X size={20} />
+        <span>{typeof error === 'string' ? error : 'An error occurred'}</span>
+    </div>
+)}
 
                 <div className="application-form-card">
                     <div className="form-header">
@@ -512,14 +555,17 @@ const JobApplicationForm = (props) => {
                                 
                                 <div className="form-group col-lg-12 col-md-6 col-12">
                                     <label className="form-label">State of Origin *</label>
-                                    <input
-                                        type="text"
+                                    <select
                                         className={`tech-input ${errors.state_of_origin ? 'error' : ''}`}
                                         name="state_of_origin"
                                         value={formData.state_of_origin}
                                         onChange={handleInputChange}
-                                        placeholder="Enter your state of origin"
-                                    />
+                                    >
+                                        <option value="">Select your state of origin</option>
+                                        {nigerianStates.map(state => (
+                                            <option key={state} value={state}>{state}</option>
+                                        ))}
+                                    </select>
                                     {errors.state_of_origin && <div className="error-message">{errors.state_of_origin}</div>}
                                 </div>
                                 
@@ -534,6 +580,22 @@ const JobApplicationForm = (props) => {
                                         placeholder="Enter your full address"
                                     />
                                     {errors.address && <div className="error-message">{errors.address}</div>}
+                                </div>
+
+                                                        <div className="form-group col-12">
+                                    <label className="form-label">State of Residence *</label>
+                                    <select
+                                        className={`tech-input ${errors.state_of_resident ? 'error' : ''}`}
+                                        name="state_of_resident"
+                                        value={formData.state_of_resident}
+                                        onChange={handleInputChange}
+                                    >
+                                        <option value="">Select your state of residence</option>
+                                        {nigerianStates.map(state => (
+                                            <option key={state} value={state}>{state}</option>
+                                        ))}
+                                    </select>
+                                    {errors.state_of_resident && <div className="error-message">{errors.state_of_resident}</div>}
                                 </div>
                             </div>
                         </div>
@@ -603,32 +665,56 @@ const JobApplicationForm = (props) => {
                         <div className="form-section">
                             <div className="section-header">
                                 <Globe className="section-icon" size={24} />
-                                <h4>Professional Information</h4>
+                                <h4>Cover Letter Upload</h4>
                             </div>
                             <div className="form-grid">
-                                <div className="form-group col-12">
-                                    <label className="form-label">Work Experience *</label>
-                                    <textarea
-                                        className={`tech-textarea ${errors.experience ? 'error' : ''}`}
-                                        name="experience"
-                                        rows="4"
-                                        value={formData.experience}
-                                        onChange={handleInputChange}
-                                        placeholder="Describe your relevant work experience, skills, and achievements..."
-                                    />
-                                    {errors.experience && <div className="error-message">{errors.experience}</div>}
-                                </div>
+        
                                 
                                 <div className="form-group col-12">
-                                    <label className="form-label">Cover Letter *</label>
-                                    <textarea
-                                        className={`tech-textarea ${errors.cover_letter ? 'error' : ''}`}
-                                        name="cover_letter"
-                                        rows="5"
-                                        value={formData.cover_letter}
-                                        onChange={handleInputChange}
-                                        placeholder="Tell us why you're interested in this position and why you'd be a great fit..."
-                                    />
+                                    <label className="form-label">Cover Letter</label>
+                                    <div className={`tech-upload-area ${errors.cover_letter ? 'error' : ''}`}>
+                                        {!formData.cover_letter ? (
+                                            <label htmlFor="cover_letter" className="upload-zone">
+                                                <div className="upload-content">
+                                                    <Upload className="upload-icon" size={48} />
+                                                    <h5>Upload your Cover Letter</h5>
+                                                    <p>Drag and drop your cover letter here or <span className="upload-link">click to browse</span></p>
+                                                    <div className="upload-formats">
+                                                        <span className="format-badge">PDF</span>
+                                                        <span className="format-badge">DOC</span>
+                                                        <span className="format-badge">DOCX</span>
+                                                        <span className="format-badge">TXT</span>
+                                                        <span className="size-limit">Max 5MB (Optional)</span>
+                                                    </div>
+                                                </div>
+                                                <input
+                                                    type="file"
+                                                    id="cover_letter"
+                                                    name="cover_letter"
+                                                    accept=".pdf,.doc,.docx,.txt"
+                                                    onChange={handleFileChange}
+                                                    className="upload-input"
+                                                />
+                                            </label>
+                                        ) : (
+                                            <div className="uploaded-file">
+                                                <div className="file-preview">
+                                                    <FileText className="file-icon" size={24} />
+                                                    <div className="file-details">
+                                                        <h6>{formData.cover_letter.name}</h6>
+                                                        <span className="file-size">{(formData.cover_letter.size / 1024 / 1024).toFixed(2)} MB</span>
+                                                    </div>
+                                                </div>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => removeFile('cover_letter')}
+                                                    className="remove-file-btn"
+                                                >
+                                                    <X size={16} />
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
                                     {errors.cover_letter && <div className="error-message">{errors.cover_letter}</div>}
                                 </div>
                             </div>
@@ -677,7 +763,7 @@ const JobApplicationForm = (props) => {
                                                 </div>
                                                 <button
                                                     type="button"
-                                                    onClick={removeFile}
+onClick={() => removeFile('cv_file')}
                                                     className="remove-file-btn"
                                                 >
                                                     <X size={16} />

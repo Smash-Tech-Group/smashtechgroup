@@ -16,6 +16,8 @@ const Careers = (props) => {
     const [error, setError] = useState(null);
     const [expandedDescriptions, setExpandedDescriptions] = useState({});
     const [expandedRequirements, setExpandedRequirements] = useState({});
+    const [expandedResposibility, setExpandedResponsibility] = useState({});
+
 
     useEffect(() => {
         document.title = `${props.company} — Careers`;
@@ -61,6 +63,13 @@ const Careers = (props) => {
         }));
     };
 
+        const toggleResponsibilityExpansion = (jobId) => {
+        setExpandedResponsibility(prev => ({
+            ...prev,
+            [jobId]: !prev[jobId]
+        }));
+    };
+
     const truncateText = (text, maxLength = 150) => {
         if (!text) return '';
         if (text.length <= maxLength) return text;
@@ -91,7 +100,7 @@ const Careers = (props) => {
             <Header />    
             <Banner_otherpages title="Careers" image={image} />
 
-            <div className="flex gap-3 mt-[2rem] mb-[5rem] px-[25.9px]" id="">
+            <div className="flex gap-3 mt-[3rem] md:mt-[5rem] mb-[5rem] px-[25.9px]" id="">
                 <div className="flex">
                     <img src={icon} className="h-[45px] md:h-[60px] w-[350px] md:w-[130px]" alt="Career icon" /> 
                 </div>
@@ -180,7 +189,7 @@ const Careers = (props) => {
                                                 <div>
                                                     <div className="mb-3">
                                                         <h6 className='font-semibold mb-2'>Job Description:</h6>
-                                                        <p>
+                                                        <p className='text-base'>
                                                             {expandedDescriptions[job.id] 
                                                                 ? job.description 
                                                                 : truncateText(job.description)
@@ -196,6 +205,56 @@ const Careers = (props) => {
                                                             </button>
                                                         )}
                                                     </div>
+
+
+                                                                     {job.responsibility && (
+                                                        <div className="mb-3">
+                                                            <h6 className='font-semibold mb-2'>Key Responsibilities:</h6>
+                                                            <div>
+                                                                {expandedResposibility[job.id] ? (
+                                                                    <div 
+                                                                        dangerouslySetInnerHTML={{ 
+                                                                            __html: job.requirements.replace(/\n/g, '<br>') 
+                                                                        }} 
+                                                                    />
+                                                                ) : (
+                                                                    <div 
+                                                                        dangerouslySetInnerHTML={{ 
+                                                                            __html: truncateText(job.responsibility).replace(/\n/g, '<br>') 
+                                                                        }} 
+                                                                    />
+                                                                )}
+                                                            </div>
+                                                            {shouldShowReadMore(job.responsibility) && (
+                                                                <button
+                                                                    onClick={() => toggleResponsibilityExpansion(job.id)}
+                                                                    className="btn btn-link p-0 text-primary text-decoration-none mt-1"
+                                                                    style={{ fontSize: '0.9rem' }}
+                                                                >
+                                                                    {expandedResposibility[job.id] ? 'Read Less' : 'Read More'}
+                                                                </button>
+                                                            )}
+                                                        </div>
+                                                    )}
+
+                                                           {/* <div className="mb-3">
+                                                        <h6 className='font-semibold mb-2'>Key Responsibilities:</h6>
+                                                        <p>
+                                                            {expandedDescriptions[job.id] 
+                                                                ? job.responsibility 
+                                                                : truncateText(job.responsibility)
+                                                            }
+                                                        </p>
+                                                        {shouldShowReadMore(job.responsibility) && (
+                                                            <button
+                                                                onClick={() => toggleDescriptionExpansion(job.id)}
+                                                                className="btn btn-link p-0 text-primary text-decoration-none"
+                                                                style={{ fontSize: '0.9rem' }}
+                                                            >
+                                                                {expandedDescriptions[job.id] ? 'Read Less' : 'Read More'}
+                                                            </button>
+                                                        )}
+                                                    </div> */}
 
                                                     {job.requirements && (
                                                         <div className="mb-3">

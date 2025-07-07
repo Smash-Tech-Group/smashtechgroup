@@ -27,7 +27,7 @@ const WhoWeAre = () => {
           <h2 className="text-[32px] hidden md:block font-semibold">Who we are</h2>
 
           <p className='text-base !mt-6 md:!mt-0 mb-3 leading-[26px] font-normal'><b>Smash Technology</b> is a tech group of companies focused on employing technology to service its clients locally and globally. Initially, the brand focused on Transport Investment 
-          across the country and beyond before pivoting into other viable sectors such as E-hailing, E-commerce, Food delivery, Booking platform, Virtual Office platforms, Travels, Real Estate, Social Networking among others.</p>
+          across the country and beyond before pivoting into other viable sectors such as Fintech, E-hailing, E-commerce, Food delivery, Booking platform, Virtual Office platforms, Travels, Real Estate, Social Networking among others.</p>
 
           <p className='text-base mb-3 font-normal leading-[26px]'><b>Smash Technology</b> is a combination of almost a decade of visionary leadership, hard work, and dedication from many experienced and committed men and women 
             who are aligned with the core purpose and goal of the brand.</p>

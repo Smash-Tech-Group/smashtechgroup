@@ -103,6 +103,12 @@ h2, h3{
   color: var(--smashtech-color);
   text-transform: capitalize !important;
 }
+
+/* .logos{
+  max-width: 18% !important;
+} */
+
+
 h3{
   font-size: 2rem;
   color: var(--smashtech-deep-grey);
